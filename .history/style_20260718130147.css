@@ -1,0 +1,59 @@
+
+
+/* ========================================
+1. FONTS
+======================================== */
+
+@font-face {
+    font-family: 'Hexen';
+    src: url('assets/fonts/Hexen.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Sins';
+    src: url('assets/fonts/Sins.otf') format('opentype');
+}
+
+/* ========================================
+2. 
+======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    border: 1px solid red
+}
+
+/*body {
+    background-image: url('assets/images/background.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}*/
+
+body {
+    background-color: burlywood;
+}
+
+/* ========================================
+3. HEADER
+======================================== */
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+}
+
+.logo {
+    display: flex;
+}
+
+.top-bar {
+    display: flex;
+    list-style: none;
+}
+

@@ -1,0 +1,200 @@
+/* ========================================
+1. COLOR
+======================================== */
+
+:root {
+    --bg-color: #4B2E2B;
+    --logo-color: #000000;
+    --text-color: #e1af82;
+    --hover-color: #FFF8F0;
+    --border-color: #4B2E2B;
+    --accent-color: #8C5A3C;
+}   
+
+/* ========================================
+2. FONTS
+======================================== */
+
+@font-face {
+    font-family: 'Hexen';
+    src: url('assets/fonts/Hexen.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Sins';
+    src: url('assets/fonts/Sins.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Kait';
+    src: url('assets/fonts/Kait.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Aulieny';
+    src: url('assets/fonts/Aulieny.otf') format('opentype');
+}
+
+/* ========================================
+3. BASE STYLES
+======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    /*background-image: url('assets/images/background.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;*/
+}
+
+/* ========================================
+4. HEADER
+======================================== */
+
+header {
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    background-color: var(--accent-color);
+    font-size: 1.5rem;
+    position: relative;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    color: var(--text-color);
+    font-family: Aulieny;
+    text-transform: uppercase;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.logo-img {
+    margin-bottom: 0.5rem;
+}
+
+.top-bar {
+    display: flex;
+    list-style: none;
+    gap: 3rem;
+    margin-right: 1rem;
+}
+
+.top-bar a {
+    text-decoration: none;
+    color: var(--text-color);
+    text-transform: uppercase;
+    font-family: Aulieny;
+    transition: color 0.3s ease;
+}
+
+.top-bar a:hover {
+    color: var(--hover-color);
+}
+
+/* ========================================
+5. HOME SECTION
+======================================== */
+
+.home-section {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 0 2rem;
+    position: relative;
+    width: 100%;
+    z-index: 10;
+    max-width: 100%;
+    position: relative;
+}
+
+
+.home-content {
+    width: 100%;
+    z-index: 10;
+    max-width: 100%;
+    position: relative;
+    margin-top: 7rem;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.home-content h1 {
+    font-size: 11rem;
+    color: var(--hover-color);
+    font-family: sins;
+    font-weight: 100;
+}
+
+.home-content p {
+    font-size: 3rem;
+    color: var(--text-color);
+    font-family: Kait;
+    letter-spacing: 3px;
+}
+
+.home-button {
+    background-color: var(--accent-color);
+    border-radius: 20px;
+    text-decoration: none;
+    color: var(--hover-color);
+    padding: 0.5rem 2.5rem 0.1rem 2.5rem;
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    font-family: Aulieny;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.home-button:hover {
+    background-color: var(--hover-color);
+    color: var(--accent-color);
+}
+
+/* ========================================
+5. FOOTER
+======================================== */
+
+.features-section {
+    padding: 2rem 2rem;
+}
+
+.features-section h2 {
+    font-family: Aulieny;
+    font-size: 1.5rem;
+    letter-spacing: 3px;
+    color: var(--hover-color);
+
+}
+
+/* ========================================
+6. FOOTER
+======================================== */
+
+footer {
+    background-color: var(--accent-color);  
+    padding: 3rem 2rem;
+}
+
+footer p {
+    font-family: aulieny;
+    font-size: 1rem;
+    color: var(--hover-color);
+    margin-bottom: 1rem;
+}
