@@ -1,0 +1,19 @@
+
+
+/* ========================================
+1. FONTS
+======================================== */
+
+@font-face {
+    font-family: 'Hexen';
+    src: url('assets/fonts/Hexen.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Sins';
+    src: url('assets/fonts/Sins.otf') format('opentype');
+}
+
+body {
+    background-image: url(assets/images/background.png)
+}

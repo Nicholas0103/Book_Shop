@@ -1,0 +1,85 @@
+
+
+/* ========================================
+1. FONTS
+======================================== */
+
+@font-face {
+    font-family: 'Hexen';
+    src: url('assets/fonts/Hexen.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Sins';
+    src: url('assets/fonts/Sins.otf') format('opentype');
+}
+
+/* ========================================
+2. 
+======================================== */
+
+/*body {
+    background-image: url('assets/images/background.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}*/
+
+body {
+    background-color: burlywood;
+}
+
+/* ========================================
+3. 
+======================================== */
+
+header {
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    position: fixed;
+    padding: 0.5rem 5%;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(144, 120, 90);
+}
+
+.logo {
+    display: flex;
+}
+
+.top-bar {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style: none;
+}
+
+.top-bar li{
+    margin: 0 0.5rem;
+}
+
+.top-bar a {
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    font-family: Hexen;
+    text-decoration: none;
+    transition: color 0.3s;
+    color: black;
+}
+
+.top-bar a:hover {
+    color: burlywood;
+}
+
+/* ========================================
+4. 
+======================================== */
+
+.home-section h1 {
+    font-family: Sins;
+    color: white;
+    font-size: 10rem;
+}
