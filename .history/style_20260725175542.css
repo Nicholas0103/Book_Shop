@@ -293,9 +293,11 @@ footer p:last-child {
     transform: translateY(0);
 }
 .top-bar a.active {
+    
     color: var(--hover-color);
     text-decoration: underline;
     text-decoration-color: var(--hover-color);
-    text-decoration-thickness: 2px;
-    text-underline-offset: 0.5rem;
+    text-decoration-thickness: 2px; /* Controls line thickness */
+    text-underline-offset: 0.5rem;     /* Controls the exact distance below the text */
+    margin-top: 3rem;
 }

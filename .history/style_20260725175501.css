@@ -44,6 +44,7 @@
     padding: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
+    border: 1px solid red;
 }
 
 body {
@@ -296,6 +297,7 @@ footer p:last-child {
     color: var(--hover-color);
     text-decoration: underline;
     text-decoration-color: var(--hover-color);
-    text-decoration-thickness: 2px;
-    text-underline-offset: 0.5rem;
+    text-decoration-thickness: 2px; /* Controls line thickness */
+    text-underline-offset: 1rem;     /* Controls the exact distance below the text */
+    margin-top: 3rem;
 }

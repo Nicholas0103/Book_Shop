@@ -113,10 +113,9 @@ header {
 
 .home-section {
     min-height: 100vh;
-    padding-top: 50vh;
     display: flex;
     align-items: center;
-    padding: 80px 4rem 0 4rem;
+    padding: 0 4rem;
     border-bottom: 2px dashed var(--accent-color);
 }
 
@@ -146,15 +145,14 @@ header {
     letter-spacing: 2px;
 }
 .explore-btn {
-    background: var(--accent-color);
-    color: var(--hover-color);
-    padding: 1rem 4rem 0.5rem 4rem;
+    background: #80573c;
+    color: white;
+    padding: 18px 45px;
     border-radius: 99px;
     font-size: 1.8rem;
     text-decoration: none;
     transition: 0.3s ease;
     display: inline-block;
-    font-family: Aulieny;
 }
 .explore-btn:hover {
     background: #996b4b;
@@ -165,7 +163,6 @@ header {
     position: relative;
     height: 400px;
     left: 2rem;
-    margin-top: -4rem;
 }
 .book {
     width: 220px;
@@ -177,7 +174,7 @@ header {
     transition: all 0.3s ease;
 }
 .book1 {
-    top: 0;
+    top: 20px;
     left: 30px;
     transform: rotate(-6deg);
     z-index: 3;
@@ -281,7 +278,6 @@ footer p:last-child {
     margin: 0 auto;
     padding: 0 1rem;
 }
-
 /* Scroll Reveal Fade In Animation */
 .reveal {
     opacity: 0;
@@ -294,8 +290,5 @@ footer p:last-child {
 }
 .top-bar a.active {
     color: var(--hover-color);
-    text-decoration: underline;
-    text-decoration-color: var(--hover-color);
-    text-decoration-thickness: 2px;
-    text-underline-offset: 0.5rem;
+    border-bottom: 2px solid var(--hover-color);
 }

@@ -44,6 +44,7 @@
     padding: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
+    border: 1px solid red;
 }
 
 body {
@@ -270,7 +271,7 @@ footer p:last-child {
     text-align: center; 
 }
 .about-block p {
-    font-size: 1.15rem; 
+    font-size: 5rem; 
     line-height: 1.85; 
     color: var(--hover-color);
     font-family: Georgia, "Times New Roman", serif; 
@@ -294,8 +295,5 @@ footer p:last-child {
 }
 .top-bar a.active {
     color: var(--hover-color);
-    text-decoration: underline;
-    text-decoration-color: var(--hover-color);
-    text-decoration-thickness: 2px;
-    text-underline-offset: 0.5rem;
+    border-bottom: 2px solid var(--hover-color);
 }

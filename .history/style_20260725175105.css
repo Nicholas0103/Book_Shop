@@ -44,6 +44,7 @@
     padding: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
+    border: 1px solid red;
 }
 
 body {
@@ -165,7 +166,7 @@ header {
     position: relative;
     height: 400px;
     left: 2rem;
-    margin-top: -4rem;
+    margin
 }
 .book {
     width: 220px;
@@ -281,7 +282,6 @@ footer p:last-child {
     margin: 0 auto;
     padding: 0 1rem;
 }
-
 /* Scroll Reveal Fade In Animation */
 .reveal {
     opacity: 0;
@@ -294,8 +294,5 @@ footer p:last-child {
 }
 .top-bar a.active {
     color: var(--hover-color);
-    text-decoration: underline;
-    text-decoration-color: var(--hover-color);
-    text-decoration-thickness: 2px;
-    text-underline-offset: 0.5rem;
+    border-bottom: 2px solid var(--hover-color);
 }
