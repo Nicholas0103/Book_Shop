@@ -9,8 +9,6 @@
     --hover-color: #FFF8F0;
     --border-color: #4B2E2B;
     --accent-color: #8C5A3C;
-    
-    --border-color: rgb(75, 46, 43);
 }   
 
 /* ========================================
@@ -117,8 +115,9 @@ header {
     align-items: center;
     padding: 80px 4rem 0 4rem;
     border-bottom: 2px dashed var(--accent-color);
-    background: linear-gradient(rgba(75, 46, 43, 0.4), rgba(75, 46, 43, 0.4)), url('assets/images/background-2.png');
+    /*background-image: url('assets/images/background-2.png');
     background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
 }
 

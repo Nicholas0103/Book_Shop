@@ -112,15 +112,28 @@ header {
 
 .home-section {
     min-height: 100vh;
-    padding-top: 50vh;
     display: flex;
     align-items: center;
     padding: 80px 4rem 0 4rem;
     border-bottom: 2px dashed var(--accent-color);
-    background: linear-gradient(rgba(75, 46, 43, 0.4), rgba(75, 46, 43, 0.4)), url('assets/images/background-2.png');
+    box-sizing: border-box;
+    position: relative; /* Essential to anchor the background layer */
+    overflow: hidden;   /* Keeps the blurry edges from leaking outside the section */
+}
+
+/* This creates a separate background layer behind your text */
+.home-section::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(rgba(75, 46, 43, 0.5), rgba(75, 46, 43, 0.5)), url('assets/images/background-2.png');
     background-size: cover;
     background-repeat: no-repeat;
+    filter: blur(12px); /* This will cleanly blur ONLY the image */
+    transform: scale(1.1); /* Slightly enlarges the image to hide ugly clean edges caused by the blur */
+    z-index: -1; /* Pushes the image behind your text content */
 }
+
 
 .hero-container {
     width: 100%;

@@ -10,7 +10,7 @@
     --border-color: #4B2E2B;
     --accent-color: #8C5A3C;
     
-    --border-color: rgb(75, 46, 43);
+    --border-color: lch(43.08% 30.93 56.12)
 }   
 
 /* ========================================
@@ -117,7 +117,7 @@ header {
     align-items: center;
     padding: 80px 4rem 0 4rem;
     border-bottom: 2px dashed var(--accent-color);
-    background: linear-gradient(rgba(75, 46, 43, 0.4), rgba(75, 46, 43, 0.4)), url('assets/images/background-2.png');
+    background: linear-gradient(rgba(140, 90, 60, 0.5), rgba(140, 90, 60, 0.5)), url('assets/images/background-2.png');
     background-size: cover;
     background-repeat: no-repeat;
 }
