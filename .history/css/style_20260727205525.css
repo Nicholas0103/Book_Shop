@@ -1,0 +1,618 @@
+/* ========================================
+1. COLOR
+======================================== */
+
+:root {
+    --bg-color: #4B2E2B;
+    --logo-color: #000000;
+    --text-color: #e1af82;
+    --hover-color: #FFF8F0;
+    --border-color: #4B2E2B;
+    --accent-color: #8C5A3C;
+    
+    --border-color: rgb(75, 46, 43);
+}   
+
+/* ========================================
+2. FONTS
+======================================== */
+
+@font-face {
+    font-family: 'Hexen';
+    src: url('/assets/fonts/Hexen.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Sins';
+    src: url('/assets/fonts/Sins.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Kait';
+    src: url('/assets/fonts/Kait.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Aulieny';
+    src: url('/assets/fonts/Aulieny.otf') format('opentype');
+}
+
+/* ========================================
+3. BASE STYLES
+======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+}
+
+/* ========================================
+4. HEADER
+======================================== */
+
+header {
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    background-color: var(--accent-color);
+    font-size: 1.5rem;
+    position: relative;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    color: var(--text-color);
+    font-family: Aulieny;
+    text-transform: uppercase;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.logo-img {
+    margin-bottom: 0.5rem;
+    width: 30px;
+}
+
+.top-bar {
+    display: flex;
+    list-style: none;
+    gap: 3rem;
+    margin-right: 1rem;
+}
+
+.top-bar a {
+    text-decoration: none;
+    color: var(--text-color);
+    text-transform: uppercase;
+    font-family: Aulieny;
+    transition: color 0.3s ease;
+}
+
+.top-bar a:hover {
+    color: var(--hover-color);
+}
+
+/* ========================================
+5. HOME SECTION
+======================================== */
+
+.home-section {
+    min-height: 100vh;
+    padding-top: 50vh;
+    display: flex;
+    align-items: center;
+    padding: 80px 4rem 0 4rem;
+    border-bottom: 2px dashed var(--accent-color);
+    background: linear-gradient(rgba(75, 46, 43, 0.4), rgba(75, 46, 43, 0.4)), url('/assets/images/background-2.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.hero-container {
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 9rem;
+    align-items: center;
+}
+
+.hero-text h1 {
+    font-size: 8rem;
+    line-height: 0.82;
+    color: #fff8f0;
+    margin: 0;
+    font-family: Sins;
+    letter-spacing: 2px;
+    
+}
+.hero-text p {
+    font-size: 2.2rem;
+    color: #b88b68;
+    margin: 1.2rem 0 3.5rem;
+    letter-spacing: 2px;
+}
+.explore-btn {
+    background: var(--accent-color);
+    color: var(--hover-color);
+    padding: 1rem 4rem 0.5rem 4rem;
+    border-radius: 99px;
+    font-size: 1.8rem;
+    text-decoration: none;
+    transition: 0.3s ease;
+    display: inline-block;
+    font-family: Aulieny;
+}
+.explore-btn:hover {
+    background: #996b4b;
+    transform: translateY(-4px);
+}
+
+.hero-books {
+    position: relative;
+    height: 400px;
+    left: 2rem;
+    margin-top: -4rem;
+}
+.book {
+    width: 220px;
+    height: 330px;
+    object-fit: cover;
+    border-radius: 6px;
+    box-shadow: 0 8px 22px rgba(0,0,0,0.45);
+    position: absolute;
+    transition: all 0.3s ease;
+}
+.book1 {
+    top: 0;
+    left: 30px;
+    transform: rotate(-6deg);
+    z-index: 3;
+}
+.book2 {
+    top: 80px;
+    left: 130px;
+    transform: rotate(4deg);
+    z-index: 2;
+}
+.book3 {
+    top: 140px;
+    left: 60px;
+    transform: rotate(-2deg);
+    z-index: 1;
+}
+.book:hover {
+    transform: rotate(0deg) translateY(-12px);
+    z-index: 10;
+}
+
+
+/* ========================================
+6. MAIN SECTION
+======================================== */
+
+.features-section, .high-rated-section, .book-month-section{
+    padding: 1rem 1rem 5rem 1rem;
+    text-align: center;
+    border-bottom: 2px dashed var(--accent-color);
+}
+
+.section-title {
+    font-family: Sins;
+    font-size: 5rem;
+    letter-spacing: 1px;
+    color: var(--hover-color);
+    margin-bottom: -0.5rem;
+    text-transform: uppercase;
+    margin-top: 3rem;
+}
+
+.section-subtitle {
+    font-family: Aulieny;
+    font-size: 2.5rem;
+    color: var(--accent-color);
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+}
+
+/* ========================================
+5. FEATURES SECTION
+======================================== */
+
+.slider-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    margin: 0 auto;
+}
+
+.slider-track {
+    flex: 0 0 calc(90% - 15px);
+    display: flex;
+    overflow: hidden;
+    scroll-behavior: smooth;
+    gap: 2rem;
+    overflow-x: auto;
+
+    padding-left: 2rem; 
+    padding-right: 2rem;
+    box-sizing: border-box;
+    -webkit-mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        black 8%,
+        black 92%,
+        transparent 100%
+    );
+    mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        black 8%,
+        black 92%,
+        transparent 100%
+    );
+}
+
+.slider-track::-webkit-scrollbar {
+    display: none; 
+}
+
+.button-area {
+    display: flex;
+    width: 5%;
+    justify-content: center;
+    align-items: center;
+}
+
+.arrow-btn {
+    background-color: #FFFDF8;
+    color: #5A3500;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    transition: background-color 0.2s;
+}
+
+.arrow-btn:hover {
+    background-color: #D4AF37;
+}
+
+.book-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.book-cover-link {
+    display: block;
+    width: 12rem;
+    height: 20rem; 
+    margin-bottom: 15px;
+    border-radius: 6px;
+    overflow: hidden; 
+    border: 1px solid var(--accent-color); 
+    background-color: var(--accent-color);
+}
+
+.book-cover:hover {
+    transform: scale(1.03);
+    opacity: 1.0;
+}
+
+.book-cover {
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
+    object-fit: cover; 
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.buy-btn {
+    background-color: #FFFDF8;
+    color: #5A3500;
+    border: none;
+    padding: 0.3rem 3rem 0.1rem 3rem;
+    border-radius: 20px;
+    font-family: Aulieny;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+    margin-top: 1rem;
+}
+
+.buy-btn:hover {
+    background-color: var(--accent-color);
+    color: var(--hover-color);
+    transform: translateY(-2px);
+}
+
+
+@media (max-width: 768px) {
+    .book-card {
+        flex: 0 0 calc(50% - 10px); 
+    }
+}
+
+/* ========================================
+6. BOOK OF THE MONTH
+======================================== */
+
+.book-month-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.book-month-cover-link, .book-month-text {
+    width: 50%;
+}
+
+.book-month-img {
+    border-radius: 6px;
+    border: 1px solid var(--accent-color);
+    height: 60vh;
+}
+
+.book-month-title {
+    color: var(--hover-color);
+    font-size: 4rem;
+    font-family: Hexen;
+    letter-spacing: 5px;
+    font-weight: 100;
+}
+
+.book-month-author {
+    color: var(--accent-color);
+    font-size: 2rem;
+    font-family: Aulieny;
+    margi-top: -2rem;
+}
+
+.book-month-details {
+    color: var(--accent-color);
+    font-size: 1.5rem;
+    font-family: Aulieny;
+}
+
+.book-month-action {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.book-month-price {
+    color: var(--hover-color);
+    font-family: kait;
+    font-size: 3rem;
+}
+
+/* ========================================
+7. FOOTER
+======================================== */
+
+footer {
+    background-color: var(--accent-color);  
+    padding: 3rem 2rem;
+}
+
+footer p {
+    font-family: aulieny;
+    font-size: 1rem;
+    color: var(--hover-color);
+    margin-bottom: 1rem;
+}
+
+footer p:last-child {
+    margin-bottom: 0;
+}
+
+/* ========================================
+7. ABOUT PAGE
+======================================== */
+
+.about-section {
+    padding: 9rem 1rem 5rem 1rem;
+    text-align: center;
+    border-bottom: 2px dashed var(--accent-color);
+}
+
+.about-img {
+    width: 90%;
+    border: 1px solid var(--accent-color);
+    border-radius: 20px;
+    opacity: 0.8;
+    margin: 1rem 0 5rem 0;
+}
+
+.about-block {
+    margin: 3rem auto;
+    max-width: 1000px;
+    text-align: center; 
+}
+.about-block h3 {
+    font-family: Sins;
+    font-size: 2.2rem; 
+    margin-bottom: 1rem;
+    color: var(--text-color);
+    text-align: center; 
+}
+.about-block p {
+    font-size: 1.15rem; 
+    line-height: 1.85; 
+    color: var(--hover-color);
+    font-family: Georgia, "Times New Roman", serif; 
+    letter-spacing: 0.3px; 
+}
+.about-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease-out;
+}
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+.top-bar a.active {
+    color: var(--hover-color);
+    text-decoration: underline;
+    text-decoration-color: var(--hover-color);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.5rem;
+}
+
+
+
+
+/* Book.html */
+/* Single Book Detail Layout */
+.book-details-wrapper {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 20px;
+    color: var(--hover-color, #D4AF37);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: transform 0.2s;
+}
+
+.back-link:hover {
+    transform: translateX(-4px);
+}
+
+.book-details-card {
+    display: flex;
+    gap: 40px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--hover-color, #D4AF37);
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.detail-cover-container {
+    flex: 0 0 300px;
+}
+
+.detail-cover {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.detail-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.detail-title {
+    font-family: Georgia, serif;
+    font-size: 2.2rem;
+    margin-bottom: 8px;
+}
+
+.detail-author {
+    font-size: 1.2rem;
+    opacity: 0.85;
+    margin-bottom: 20px;
+}
+
+.detail-metadata {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.badge {
+    background-color: rgba(212, 175, 55, 0.15);
+    color: var(--hover-color, #D4AF37);
+    border: 1px solid var(--hover-color, #D4AF37);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.detail-price-row {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.detail-price {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--hover-color, #D4AF37);
+}
+
+/* Fallback state when book ID is not found */
+.not-found-message {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+/* Responsive view for mobile screens */
+@media (max-width: 768px) {
+    .book-details-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .detail-cover-container {
+        flex: 0 0 auto;
+        width: 220px;
+    }
+
+    .detail-metadata {
+        justify-content: center;
+    }
+
+    .detail-price-row {
+        justify-content: center;
+    }
+}

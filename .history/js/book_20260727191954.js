@@ -1,0 +1,115 @@
+
+const BooksData = [
+    {
+        id: 1,
+        title: "Detection Unlimited",
+        author: "Georgette Heyer", 
+        cover: "/assets/book/book_1.jpg", 
+        rating: 3.8,
+        subgenre: "subgenre 3",
+        published_year: "1971",
+        price: "$8.39",
+    },
+    {
+        id: 2,
+        title: "The Mysterious Island",
+        author: "Jules Verne", 
+        cover: "/assets/book/book_2.jpg", 
+        rating: 3.9,
+        subgenre: "subgenre 2",
+        published_year: "1977",
+        price: "9.99",
+    },
+    {
+        id: 3,
+        title: "Sherlock Holmes",
+        author: "Conan Doyle", 
+        cover: "/assets/book/book_3.jpg", 
+        rating: 4.8,
+        subgenre: "subgenre 1",
+        published_year: "1924",
+        price: "$15.99",
+    },
+    {
+        id: 4,
+        title: "The Mystery of the Blue Train",
+        author: "Agatha Christie", 
+        cover: "/assets/book/book_4.png", 
+        rating: 4.1,
+        subgenre: "subgenre 1",
+        published_year: "2024",
+        price: "$15.99",
+    },
+    {
+        id: 5,
+        title: "Murder in Three Acts",
+        author: "Agatha Christie", 
+        cover: "/assets/book/book_5.png", 
+        rating: 3.7,
+        subgenre: "subgenre 2",
+        published_year: "1984",
+        price: "$7.40",
+    },
+    {
+        id: 6,
+        title: "The Mysterious Cargo",
+        author: "Galila Ben-Uri", 
+        cover: "/assets/book/book_6.png", 
+        rating: 3.2,
+        subgenre: "subgenre 2",
+        published_year: "1989",
+        price: "$19.40",
+    },
+    {
+        id: 7,
+        title: "The Mystery of the Green Ghost",
+        author: "Robert Arthur", 
+        cover: "/assets/book/book_7.png", 
+        rating: 4.0,
+        subgenre: "subgenre 4",
+        published_year: "1980",
+        price: "$9.20",
+    },
+    {
+        id: 8,
+        title: "Emil and the Detectives",
+        author: "Erich Kästner", 
+        cover: "/assets/book/book_8.png", 
+        rating: 4.2,
+        subgenre: "subgenre 4",
+        published_year: "1930",
+        price: "$5.30",
+    },
+    {
+        id: 9,
+        title: "Murder Most Unladylike",
+        author: "Robin Stevens", 
+        cover: "/assets/book/book_9.png", 
+        rating: 4.2,
+        subgenre: "subgenre 4",
+        published_year: "2016",
+        price: "$19.53",
+    },
+    {
+        id: 10,
+        title: "Mercy Watson Is Missing!",
+        author: "Kate DiCamillo", 
+        cover: "/assets/book/book_10.png", 
+        rating: 4.0,
+        subgenre: "subgenre 4",
+        published_year: "2016",
+        price: "$19.53",
+    },
+]
+
+const z = "Cozy Mystery";
+const z = "Humorous Mystery";
+const z = "Supernatural Mystery";
+const z = "Classic Detective";
+const z = "YA & Kid Mystery";
+const z = "Historical Mystery";
+-  (Comedic mystery story)
+- Supernatural Mystery (with Ghosts, Curses, Unexplained phenomena)
+- e (Traditional)
+-  (For young adults and kids)
+- Historical Mystery (Vintage, -1930s)
