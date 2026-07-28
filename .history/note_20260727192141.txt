@@ -1,7 +1,0 @@
-
-const z = "Cozy Mystery";
-const z = "Humorous Mystery";
-const z = "Supernatural Mystery";
-const z = "Classic Detective";
-const z = "YA & Kid Mystery";
-const z = "Historical Mystery";
