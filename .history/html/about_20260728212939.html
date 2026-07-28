@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mystery Bookstore</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="/assets/images/logo.png" class="logo-img" alt="logo">
+            <p>Book Shop</p>
+        </div>
+        <nav>
+            <ul class="top-bar">
+                <li><a href="" class="active">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+
+        <button id="openCartBtn" class="cart-icon-btn" aria-label="Open Cart">
+            <img src="/assets/images/svg/cart.svg" class="cart-img" alt="cart">
+            <span id="headerCartCount" class="cart-badge">0</span>
+        </button>
+
+        <div id="cartDrawer" class="cart-drawer">
+            <div class="cart-header">
+                <h3>Your Cart ( <span id="cartCount">0</span> )</h3>
+                <button id="closeCartBtn" class="close-cart-btn">&times;</button> 
+            </div>
+
+            <div id="cartItemsContainer" class="cart-items-body">
+                <p class="empty-cart-msg">Your cart is empty.</p>
+            </div>
+
+            <div class="cart-footer">
+                <div class="cart-subtotal">
+                    Subtotal: <span id="cartSubtotal">0.00</span>
+                </div>
+                <button id="checkoutBtn" class="checkout-btn" type="button">Proceed to Checkout</button>
+            </div>
+        </div>
+
+        <div id="cartOverlay" class="cart-overlay"></div>
+
+        <div id="checkoutModal" class="modal-backdrop">
+            <div class="modal-box">
+                <div class="modal-icon">📜</div>
+                <h2>Order Confirmed!</h2>
+                <p class="modal-subtitle">Your detective case files are on their way.</p>
+                
+                <div class="order-summary">
+                    <p><strong>Order ID:</strong> <span id="modalOrderId">#CLUE-00000</span></p>
+                    <p><strong>Total Paid:</strong> <span id="modalTotal">$0.00</span></p>
+                </div>
+
+                <button id="closeModalBtn" class="confirm-btn">Return to Store</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="about" class="about-section">
+            <h2 class="section-title reveal">About Us</h2>
+            <p class="section-subtitle reveal">Mystery & Detective Book Shop</p>
+            
+            <!--Background Example-->
+            <img src="/assets/images/background.png" alt="about-us" class="about-img">
+
+            <div class="about-container">
+                <div class="about-block reveal">
+                    <h3>Our Story</h3>
+                    <p>Inspired by classic detective novels and Sherlock Holmes' iconic 221B Baker Street, our bookstore was built for every fan of mystery, crime and thriller stories. We noticed local readers lacked a dedicated space for detective fiction—most general bookstores only put mystery books in a tiny corner with little attention. That’s why we created this one-stop shop fully focused on whodunits, psychological suspense and classic detective works.</p>
+                </div>
+                <div class="about-block reveal">
+                    <h3>What We Offer</h3>
+                    <p>We curate a wide collection of exclusive mystery genres: classic British detective stories, modern crime thrillers, psychological mysteries, hard-boiled detective novels and locked-room puzzle books. Every book is hand-picked to bring readers immersive, twist-filled reading experiences. We do not sell other categories like romance or fantasy to keep our store’s unique niche positioning.</p>
+                </div>
+                <div class="about-block reveal">
+                    <h3>Our Shop Concept</h3>
+                    <p>Our space adopts dark vintage tones, dim warm lighting and detective-themed decorations such as magnifying glass logos, old case files and vintage book shelves. We want readers to feel like stepping into a detective’s study, where every page turn uncovers a new secret. The website follows the same dark, warm aesthetic to mirror our physical store vibe.</p>
+                </div>
+                <div class="about-block reveal">
+                    <h3>Our Mission</h3>
+                    <p>We aim to gather all mystery lovers together, recommend hidden gem detective novels that are rarely seen in mainstream bookstores, and create a cozy reading environment for puzzle fans. Through this website, we hope more people can discover the charm of detective and mystery literature anytime, anywhere.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-info">
+            <p>📍 221B Baker Street, London</p>
+            <p>&copy; 2026 Book Shop. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="/js/main.js"></script>
+</body>
+
+</html>
