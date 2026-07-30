@@ -10,7 +10,8 @@ function renderFeaturedBooks() {
     const track = document.getElementById("sliderTrack");
     if (!track || typeof BooksData === "undefined") return;
 
-    const selectedIds = [3, 7, 14, 15, 13, 8, 2, 10];
+    //const selectedIds = [3, 7, 14, 15, 13, 8, 2, 10];
+    const selectedIds = [17, 18, 19, 20, 21, 22, 23, 24];
 
     const customBooks = selectedIds
         .map(id => BooksData.find(book => book.id === id))

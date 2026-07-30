@@ -1,11 +1,11 @@
 
 const subgenre = {
-    cozy: "Cozy Mystery",
-    dark: "Bloody Mystery",
-    supernatural: "Supernatural Mystery",
-    classic: "Classic Detective",
-    kids: "YA & Kid Mystery",
-    historical: "Historical Mystery"
+    cozy: "Cozy Mystery",                  // 
+    dark: "Bloody Mystery",                // 
+    supernatural: "Supernatural Mystery",  //
+    classic: "Classic Detective",          //
+    kids: "YA & Kid Mystery",              //
+    historical: "Historical Mystery"       //
 };
 
 const BooksData = [
@@ -206,5 +206,82 @@ const BooksData = [
         published_year: "2014",
         price: "$5.35",
         description: "Teddy is the only person caught on camera entering and exiting the exhibit. Teddy didn't commit the crime--but if he can't find the real culprit, he'll be sent to juvie as a convicted koala-napper.",
+    },
+    {
+        id: 19,
+        title: "Mystery adventure of the Indian burial ground",
+        author: "Henry A. Bamman", 
+        cover: "../assets/book/book_19.png", 
+        rating: 4.6,
+        subgenre: subgenre.cozy,
+        published_year: "1969",
+        price: "$16.20",
+        description: "The three young people went to the Indian burial ground looking only for bears and found instead a gold figurine and men with guns.",
+    },
+    {
+        id: 20,
+        title: "Desert crossing",
+        author: "Elise Broach", 
+        cover: "../assets/book/book_20.png", 
+        rating: 4.1,
+        subgenre: subgenre.cozy,
+        published_year: "2006",
+        price: "$4.98",
+        description: "A summer trip across the New Mexico desert turns nightmarish for fourteen-year-old Lucy, her older brother Jamie, and his best friend Kit, as they become involved in the suspicious death of a young girl.",
+    },
+    {
+        id: 21,
+        title: "Masterpiece",
+        author: "Elise Broach", 
+        cover: "../assets/book/book_21.png", 
+        rating: 4.0,
+        subgenre: subgenre.classic,
+        published_year: "2008",
+        price: "$5.96",
+        description: "After Marvin, a beetle, makes a miniature drawing as an eleventh birthday gift for James, a human with whom he shares a house, the two new friends work together to help recover a Durer drawing stolen from the Metropolitan Museum of Art.",
+    },
+    {
+        id: 22,
+        title: "The horns of danger",
+        author: "Mabel Esther Allan", 
+        cover: "../assets/book/book_22.png", 
+        rating: 3.0,
+        subgenre: subgenre.supernatural,
+        published_year: "1981",
+        price: "$9.50",
+        description: "Eighteen-year-old Marissa visits her orphaned friend Sabrina at Darkling Farm, and becomes involved in mysteries surrounding an ancient Midlands custom known as the Deer Darkling Horn Dance.",
+    },
+    {
+        id: 23,
+        title: "The intruders",
+        author: "E. E. Richardson", 
+        cover: "../assets/book/book_23.png", 
+        rating: 4.3,
+        subgenre: subgenre.dark,
+        published_year: "2006",
+        price: "$7.34",
+        description: "When soon-to-be stepbrothers, Joel and Tim, start having the same nightmare after moving into a old house, they decide to investigate its source and the many other strange occurrences in their new home.",
+    },
+    {
+        id: 23,
+        title: "The intruders",
+        author: "E. E. Richardson", 
+        cover: "../assets/book/book_23.png", 
+        rating: 4.3,
+        subgenre: subgenre.historical,
+        published_year: "2006",
+        price: "$7.34",
+        description: "When soon-to-be stepbrothers, Joel and Tim, start having the same nightmare after moving into a old house, they decide to investigate its source and the many other strange occurrences in their new home.",
+    },
+    {
+        id: 24,
+        title: "Mystery of the hidden book",
+        author: "Helen Fuller Orton", 
+        cover: "../assets/book/book_24.png", 
+        rating: 3.9,
+        subgenre: subgenre.kids,
+        published_year: "1953",
+        price: "$13.20",
+        description: "Four children tasked with searching Professor Barton's large house for a valuable book hidden in a secret room discover they are not the only ones sleuthing.",
     }
 ]

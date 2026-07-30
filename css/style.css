@@ -262,6 +262,11 @@ header {
     transition: background-color 0.3s ease;
 }
 
+
+.cart-items-body::-webkit-scrollbar {
+    display: none; 
+}
+
 .cart-item-list:hover {
     background-color: var(--bg-color-second);
 }
@@ -450,13 +455,15 @@ header {
 .explore-btn {
     background: var(--accent-color);
     color: var(--hover-color);
+    margin-top: 1rem;
     padding: 1rem 4rem 0.5rem 4rem;
     border-radius: 99px;
-    font-size: 1.8rem;
+    font-size: 1.3rem;
     text-decoration: none;
     transition: 0.3s ease;
     display: inline-block;
     font-family: Aulieny;
+    border: none;
 }
 .explore-btn:hover {
     background: #996b4b;
@@ -912,6 +919,8 @@ footer p:last-child {
     color: var(--hover-color);
     font-size: 1.3rem;
     font-family: Aulieny;
+    text-align: justify;
+    padding-right: 1rem;
 }
 
 .detail-price-row {
@@ -1081,12 +1090,8 @@ footer p:last-child {
 .contact-map-box {
     margin-top: 2.5rem;
     background: var(--accent-color);
-    padding: 3rem 1rem;
+    padding: 0.5rem 0.5rem;
     border-radius: 12px;
-    text-align: center;
-    color: var(--hover-color);
-    font-family: Aulieny;
-    font-size: 1.2rem;
 }
 .form-group {
     margin-bottom: 1.5rem;
@@ -1111,6 +1116,12 @@ footer p:last-child {
 .form-group input:focus, .form-group textarea:focus {
     outline: 2px solid var(--hover-color);
 }
+
+.map {
+    border: 0;
+    border-radius: 10px;
+}
+
 /* FAQ Section */
 .faq-section {
     padding: 5rem 2rem;
