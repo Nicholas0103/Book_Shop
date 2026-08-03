@@ -16,7 +16,8 @@
     --not-so-dark-color: #25180a;
     --light-color: #b4946a;
     --lighter-color: #D9D2CA;
-}   
+    --error-color: #ffb3b3;
+}
 
 /* ========================================
 2. FONTS
@@ -81,6 +82,61 @@ header {
     position: fixed;
     width: 100%;
     z-index: 1000;
+}
+
+.theme-toggle,
+.sidebar-toggle,
+.close-sidebar {
+    background: transparent;
+    border: 1px solid var(--light-color);
+    color: var(--hover-color);
+    border-radius: 999px;
+    width: 2.8rem;
+    height: 2.8rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.theme-toggle:hover,
+.sidebar-toggle:hover,
+.close-sidebar:hover {
+    transform: translateY(-2px);
+    background-color: rgba(255,255,255,0.08);
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: min(80vw, 280px);
+    height: 100vh;
+    background: var(--bg-color);
+    box-shadow: 8px 0 24px rgba(0,0,0,0.3);
+    padding: 1.5rem;
+    z-index: 1100;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    transition: left 0.3s ease;
+}
+
+.sidebar.open {
+    left: 0;
+}
+
+.sidebar a {
+    color: var(--hover-color);
+    text-decoration: none;
+    font-family: Aulieny;
+    font-size: 1.2rem;
+}
+
+.sidebar .close-sidebar {
+    align-self: flex-end;
+    margin-bottom: 1rem;
 }
 
 .logo {
@@ -650,7 +706,7 @@ header {
 
 .section-title {
     font-family: Sins;
-    font-size: 5rem;
+    font-size: 3rem;
     letter-spacing: 1px;
     color: var(--hover-color);
     margin-bottom: -0.5rem;
@@ -660,9 +716,9 @@ header {
 
 .section-subtitle {
     font-family: Aulieny;
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     color: var(--accent-color);
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
     text-transform: uppercase;
 }
 
@@ -1081,7 +1137,7 @@ footer p:last-child {
 .back-link {
     display: inline-block;
     margin-bottom: 10px;
-    color: var(--hover-color, #D4AF37);
+    color: var(--light-color);
     text-decoration: none;
     font-size: 1.5rem;
     font-family: Aulieny;
@@ -1095,8 +1151,8 @@ footer p:last-child {
 .book-details-card {
     display: flex;
     gap: 40px;
-    background-color: rgba(255, 255, 255, 0.05);
-    border: 1px solid var(--hover-color);
+    background-color: var(--not-so-dark-color);
+    border: 1px solid var(--light-color);
     border-radius: 12px;
     padding: 30px;
     margin-bottom: -2rem;
@@ -1125,19 +1181,20 @@ footer p:last-child {
 }
 
 .detail-title {
-    font-family: Hexen;
+    font-family: Aulieny;
     font-size: 4rem;
     letter-spacing: 3px;
     color: var(--hover-color);
     font-weight: 100;
     line-height: 1.0;
     margin-top: 30px; 
+    text-transform: uppercase;
 }
 
 .detail-author {
     font-size: 2rem;
     opacity: 0.85;
-    color: var(--accent-color);
+    color: var(--light-color);
     font-family: Sins;
     margin-bottom: 20px;
 }
@@ -1222,41 +1279,16 @@ footer p:last-child {
     }
 }
 
+/* ========================================
+9. CONTACT.HTML
+======================================== */
 
-
-/* Contact Form Style */
 .contact-form {
     max-width: 700px;
     margin: 0 auto;
     text-align:center;
 }
-.form-group {
-    margin: 1.5rem 0;
-}
-.form-group label {
-    display: block;
-    color: var(--text-color);
-    font-family: Aulieny;
-    font-size: 1.4rem;
-    margin-bottom: 0.5rem;
-}
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 0.8rem 1rem;
-    background: var(--accent-color);
-    border: none;
-    border-radius: 8px;
-    color: var(--hover-color);
-    font-family: Kait;
-    font-size: 1.2rem;
-}
-.form-group input:focus,
-.form-group textarea:focus {
-    outline: 2px solid var(--hover-color);
-}
 
-/* Contact Page Custom Styles */
 .contact-hero {
     min-height: 50vh;
     display: flex;
@@ -1266,27 +1298,28 @@ footer p:last-child {
     padding: 9rem 1rem 1rem 1rem;
 
 }
-.contact-hero-content {
-    max-width: 720px;
-}
 .contact-title {
     font-size: 6rem;
     font-family: Sins;
     color: var(--hover-color);
     margin: 0;
     line-height: 1;
+    text-transform: uppercase;
 }
 .contact-subtitle {
-    font-size: 1.8rem;
-    color: var(--accent-color);
+    font-size: 1.6rem;
+    color: var(--light-color);
     margin: 1rem 0;
     font-family: Aulieny;
+    margin-top: -1rem;
+    text-transform: uppercase;
 }
 .contact-desc {
-    font-size: 1.23rem;
-    color: var(--hover-color);
-    font-family: Kait;
+    font-size: 1.6rem;
+    color: var(--lighter-color);
+    font-family: Aulieny;
     line-height: 1.7;
+    margin-top: 5rem;
 }
 .contact-container {
     max-width: 1250px;
@@ -1299,67 +1332,141 @@ footer p:last-child {
 .contact-info-card, .contact-form-card {
     background: rgba(184, 139, 104, 0.12);
     border: 1px dashed var(--accent-color);
-    border-radius: 16px;
+    border-radius: 10px;
     padding: 2.8rem;
 }
 .contact-info-card h3, .contact-form-card h3 {
     font-family: Sins;
     font-size: 2.4rem;
-    color: var(--text-color);
+    color: var(--light-color);
     margin-bottom: 2rem;
+    text-transform: uppercase;
+    text-align: center;
 }
 .contact-info-item {
     display: flex;
-    gap: 1.2rem;
+    gap: 1rem;
     margin-bottom: 1.8rem;
     align-items: flex-start;
+    align-items: center;
 }
 .contact-icon {
-    font-size: 1.6rem;
+    width: 40px;
     margin-top: 0.2rem;
+    fill: var(--hover-color);
 }
 .contact-info-item strong {
     display: block;
-    color: var(--accent-color);
+    color: var(--light-color);
     font-family: Aulieny;
     font-size: 1.3rem;
     margin-bottom: 0.3rem;
 }
 .contact-info-item p {
-    color: var(--hover-color);
+    color: var(--lighter-color);
     font-family: Georgia, serif;
     margin: 0;
     font-size: 1.1rem;
 }
 .contact-map-box {
     margin-top: 2.5rem;
-    background: var(--accent-color);
+    background: var(--light-color);
     padding: 0.5rem 0.5rem;
     border-radius: 12px;
 }
-.form-group {
-    margin-bottom: 1.5rem;
-}
+
+
 .form-group label {
     display: block;
     color: var(--text-color);
     font-family: Aulieny;
     font-size: 1.4rem;
-    margin-bottom: 0.6rem;
+    margin-bottom: 0.5rem;
 }
-.form-group input, .form-group textarea {
-    width: 100%;
-    padding: 0.9rem 1.2rem;
-    background: var(--accent-color);
-    border: none;
-    border-radius: 8px;
-    color: var(--hover-color);
-    font-family: Kait;
+.form-group {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+}
+.form-group label {
+    display: block;
+    color: var(--light-color);
+    font-family: Aulieny;
     font-size: 1.2rem;
+    margin-bottom: 0;
 }
-.form-group input:focus, .form-group textarea:focus {
-    outline: 2px solid var(--hover-color);
+.form-group input, .form-group textarea, .form-group select {
+    width: 100%;
+    padding: 0.7rem 1.2rem 0.4rem 1.2rem;
+    background: var(--not-so-dark-color);
+    border: 2px solid var(--light-color);
+    color: var(--lighter-color);
+    border-radius: 5px;
+    font-family: Aulieny;
+    font-size: 1rem;
 }
+
+.form-group textarea {
+  height: auto; 
+  min-height: 7rem;  
+  max-height: 18rem; 
+  resize: vertical; 
+  line-height: 1.5; 
+  box-sizing: border-box;
+}
+
+.error-message {
+    color: var(--error-color);
+    font-size: 0.9rem;
+    padding: 0.5rem 0 0 0.2rem;
+    font-family: Aulieny;
+    min-height: 3rem;
+    display: block;
+}
+
+.form-group input.error-input, textarea.error-input, select.error-input{
+    border-color:var(--error-color);
+    background: var(--not-so-dark-color);
+    box-shadow: 0 0 5px var(--error-color);
+}
+
+
+.contact-form .explore-btn {
+    margin-top: 1rem;
+}
+.form-status {
+    font-family: Aulieny;
+    letter-spacing: 1px;
+    font-size: 1rem;
+    display: block; 
+    min-height: 3rem; 
+    margin-top: 1rem;
+}
+.form-status.success {
+    color: var(--lighter-color);
+}
+.form-status.error {
+    color: var(--error-color);
+}
+
+input::placeholder, textarea::placeholder {
+  color: var(--light-color); 
+  opacity: 0.5; 
+}
+
+input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, input:-webkit-autofill:active {
+    transition: background-color 50000s ease-in-out 0s, color 50000s ease-in-out 0s;
+}
+
+input:-webkit-autofill {
+    -webkit-text-fill-color: var(--lighter-color);
+}
+
+html[data-theme="dark"] input:-webkit-autofill {
+    -webkit-text-fill-color: #ffffff;
+    -webkit-box-shadow: 0 0 0px 1000px var(--lighter-color) inset;
+}
+
 
 .map {
     border: 0;
@@ -1468,22 +1575,4 @@ footer p:last-child {
 .faq-item.active .faq-answer {
     max-height: 300px;
     padding: 0 1.8rem 1.2rem;
-}
-.error-message {
-    display: block;
-    color: #ffb3b3;
-    font-size: 1rem;
-    margin-top: 0.3rem;
-    font-family: Aulieny;
-}
-.input-error {
-    outline: 2px solid #ff6b6b !important;
-}
-.form-status.success {
-    color: #b8ffb8;
-    margin-top: 1rem;
-}
-.form-status.error {
-    color: #ffb3b3;
-    margin-top: 1rem;
 }
