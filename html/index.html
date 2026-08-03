@@ -13,13 +13,17 @@
 
     <header>
         <div class="logo">
-            <img src="../assets/images/logo.png" class="logo-img" alt="logo">
-            <p>Book Shop</p>
+            <img src="../assets/images/logo2.png" class="logo-img" alt="logo">
+            <div class="logo-text">
+                <p class="logo-title">Book Shop</p>
+                <p class="logo-subtitle">Every Book Holds a Clue</p>
+            </div>
         </div>
         <nav>
             <ul class="top-bar">
                 <li><a href="#home" class="active">Home</a></li>
-                <li><a href="shop.html">Shop</a></li>
+                <li><a href="shop.html">Discover</a></li>
+                <li><a href="shop.html">Categories</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
@@ -70,15 +74,63 @@
         <section id="home" class="home-section">
             <div class="hero-container">
                 <div class="hero-text">
-                    <h1>Mystery<br>Bookstore</h1>
-                    <p>UNRAVEL A MYSTERY WITH EVERY TURN OF THE PAGE.</p>
-                    <a href="about.html" class="explore-btn">Explore Books</a>
+                    <h1>Mystery<br>Bookshop</h1>
+                    <hr>
+                    <p>Step into a world of secrets, suspects,<br>and stories you won't forget.</p>
+                    <div class="button-list">
+                        <a href="about.html" class="explore-btn">Explore Collection</a>
+                        <a href="about.html" class="category-btn">Browse Categories</a>
+                    </div>
                 </div>
 
                 <div class="hero-books">
                     <img src="../assets/book/book_1.jpg" class="book book1" alt="detective book cover">
-                    <img src="../assets/book/book_2.jpg" class="book book2" alt="mystery novel">
-                    <img src="../assets/book/book_3.jpg" class="book book3" alt="adventure book">
+                    <img src="../assets/book/book_20.png" class="book book2" alt="mystery novel">
+                    <img src="../assets/book/book_14.png" class="book book3" alt="adventure book">
+                </div>
+            </div>
+        </section>
+
+        <section class="category">
+            <div class="paper">
+                <h2 class="category-title">Find your<br>next read</h2>
+                <div class="category-list">
+                    <hr>
+                    <div class="category-details">
+                        <img src="/assets/images/01_Classic.png" class="category-img">
+                        <!--<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" class="category-img"><path d="M112 320C112 205.1 205.1 112 320 112C383.1 112 439.6 140.1 477.8 184.5C486.4 194.6 501.6 195.7 511.6 187.1C521.6 178.5 522.8 163.3 514.2 153.3C467.3 98.6 397.7 64 320 64C178.6 64 64 178.6 64 320L64 360C64 373.3 74.7 384 88 384C101.3 384 112 373.3 112 360L112 320zM570.5 267.1C567.8 254.1 555 245.8 542.1 248.6C529.2 251.4 520.8 264.1 523.6 277C526.5 290.9 528.1 305.3 528.1 320.1L528.1 360.1C528.1 373.4 538.8 384.1 552.1 384.1C565.4 384.1 576.1 373.4 576.1 360.1L576.1 320.1C576.1 302 574.2 284.3 570.6 267.2zM320 144C301 144 282.6 147 265.5 152.6C250.3 157.6 246.8 176.3 257.2 188.5C264.3 196.8 276 199.3 286.6 196.4C297.2 193.5 308.4 192 320 192C390.7 192 448 249.3 448 320L448 344.9C448 370.1 446.5 395.2 443.6 420.2C441.9 434.8 453 448 467.8 448C479.6 448 489.7 439.4 491.1 427.7C494.4 400.3 496.1 372.7 496.1 345L496.1 320.1C496.1 222.9 417.3 144.1 320.1 144.1zM214.7 212.7C205.6 202.1 189.4 201.3 180.8 212.3C157.7 242.1 144 279.4 144 320L144 344.9C144 369.1 141.4 393.3 136.2 416.8C132.8 432.4 144.1 447.9 160.1 447.9C170.6 447.9 180 440.9 182.3 430.6C188.7 402.5 192 373.8 192 344.8L192 319.9C192 292.7 200.5 267.5 214.9 246.8C222.1 236.4 222.9 222.2 214.7 212.6zM320 224C267 224 224 267 224 320L224 344.9C224 380.8 219.4 416.4 210.2 451C206.4 465.3 216.9 480 231.7 480C241.2 480 249.6 473.8 252.1 464.6C262.6 425.6 268 385.4 268 344.9L268 320C268 291.3 291.3 268 320 268C348.7 268 372 291.3 372 320L372 344.9C372 381.2 368.5 417.3 361.6 452.8C358.9 466.7 369.3 480 383.4 480C393.6 480 402.4 473 404.4 463C412.1 424.2 416 384.7 416 344.9L416 320C416 267 373 224 320 224zM344 320C344 306.7 333.3 296 320 296C306.7 296 296 306.7 296 320L296 344.9C296 404.8 285 464.2 263.5 520.1L257.6 535.4C252.8 547.8 259 561.7 271.4 566.4C283.8 571.1 297.7 565 302.4 552.6L308.3 537.3C331.9 475.9 344 410.7 344 344.9L344 320z"/></svg>-->
+                        <p class="category-name">Classic</p>
+                    </div>
+                    <hr>
+                    <div class="category-details">
+                        <img src="/assets/images/02_Dark.png" class="category-img">
+                        <!--<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" class="category-img"><path d="M480 491.4C538.5 447.4 576 379.8 576 304C576 171.5 461.4 64 320 64C178.6 64 64 171.5 64 304C64 379.8 101.5 447.4 160 491.4L160 528C160 554.5 181.5 576 208 576L240 576L240 536C240 522.7 250.7 512 264 512C277.3 512 288 522.7 288 536L288 576L352 576L352 536C352 522.7 362.7 512 376 512C389.3 512 400 522.7 400 536L400 576L432 576C458.5 576 480 554.5 480 528L480 491.4zM160 320C160 284.7 188.7 256 224 256C259.3 256 288 284.7 288 320C288 355.3 259.3 384 224 384C188.7 384 160 355.3 160 320zM416 256C451.3 256 480 284.7 480 320C480 355.3 451.3 384 416 384C380.7 384 352 355.3 352 320C352 284.7 380.7 256 416 256z"/></svg>-->
+                        <p class="category-name">Dark</p>
+                    </div>
+                    <hr>
+                    <div class="category-details">
+                        <img src="/assets/images/03_Supernatural.png" class="category-img">
+                        <!--<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" class="category-img"><path d="M168.1 531.1L156.9 540.1C153.7 542.6 149.8 544 145.8 544C136 544 128 536 128 526.2L128 256C128 150 214 64 320 64C426 64 512 150 512 256L512 526.2C512 536 504 544 494.2 544C490.2 544 486.3 542.6 483.1 540.1L471.9 531.1C458.5 520.4 439.1 522.1 427.8 535L397.3 570C394 573.8 389.1 576 384 576C378.9 576 374.1 573.8 370.7 570L344.1 539.5C331.4 524.9 308.7 524.9 295.9 539.5L269.3 570C266 573.8 261.1 576 256 576C250.9 576 246.1 573.8 242.7 570L212.2 535C200.9 522.1 181.5 520.4 168.1 531.1zM288 256C288 238.3 273.7 224 256 224C238.3 224 224 238.3 224 256C224 273.7 238.3 288 256 288C273.7 288 288 273.7 288 256zM384 288C401.7 288 416 273.7 416 256C416 238.3 401.7 224 384 224C366.3 224 352 238.3 352 256C352 273.7 366.3 288 384 288z"/></svg>-->
+                        <p class="category-name">Supernatural</p>
+                    </div>
+                    <hr>
+                    <div class="category-details">
+                        <img src="/assets/images/04_Cozy.png" class="category-img">
+                        <!--<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" class="category-img"><path d="M184 48C170.7 48 160 58.7 160 72C160 110.9 183.4 131.4 199.1 145.1L200.2 146.1C216.5 160.4 224 167.9 224 184C224 197.3 234.7 208 248 208C261.3 208 272 197.3 272 184C272 145.1 248.6 124.6 232.9 110.9L231.8 109.9C215.5 95.7 208 88.1 208 72C208 58.7 197.3 48 184 48zM128 256C110.3 256 96 270.3 96 288L96 480C96 533 139 576 192 576L384 576C425.8 576 461.4 549.3 474.5 512L480 512C550.7 512 608 454.7 608 384C608 313.3 550.7 256 480 256L128 256zM480 448L480 320C515.3 320 544 348.7 544 384C544 419.3 515.3 448 480 448zM320 72C320 58.7 309.3 48 296 48C282.7 48 272 58.7 272 72C272 110.9 295.4 131.4 311.1 145.1L312.2 146.1C328.5 160.4 336 167.9 336 184C336 197.3 346.7 208 360 208C373.3 208 384 197.3 384 184C384 145.1 360.6 124.6 344.9 110.9L343.8 109.9C327.5 95.7 320 88.1 320 72z"/></svg>-->
+                        <p class="category-name">Cozy</p>
+                    </div>
+                    <hr>
+                    <div class="category-details">
+                        <img src="/assets/images/05_Kid.png" class="category-img">
+                        <!--<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" class="category-img"><path d="M576 96C576 204.1 499.4 294.3 397.6 315.4C389.7 257.3 363.6 205 325.1 164.5C365.2 104 433.9 64 512 64L544 64C561.7 64 576 78.3 576 96zM64 160C64 142.3 78.3 128 96 128L128 128C251.7 128 352 228.3 352 352L352 544C352 561.7 337.7 576 320 576C302.3 576 288 561.7 288 544L288 384C164.3 384 64 283.7 64 160z"/></svg>-->
+                        <p class="category-name">Young Adult</p>
+                    </div>
+                    <hr>
+                    <div class="category-details">
+                        <img src="/assets/images/06_Historical.png" class="category-img">
+                        <!--<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><path d="M32 176C32 134.5 63.6 100.4 104 96.4L104 96L384 96C437 96 480 139 480 192L480 368L304 368C264.2 368 232 400.2 232 440L232 500C232 524.3 212.3 544 188 544C163.7 544 144 524.3 144 500L144 272L80 272C53.5 272 32 250.5 32 224L32 176zM268.8 544C275.9 530.9 280 515.9 280 500L280 440C280 426.7 290.7 416 304 416L552 416C565.3 416 576 426.7 576 440L576 464C576 508.2 540.2 544 496 544L268.8 544zM112 144C94.3 144 80 158.3 80 176L80 224L144 224L144 176C144 158.3 129.7 144 112 144z"/></svg>-->
+                        <p class="category-name">Historical</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -89,13 +141,13 @@
 
             <div class="slider-wrapper"> 
                 <div class="button-area">
-                    <button class="arrow-btn left-arrow" id="prevBtn" aria-label="Previous Books">&#9668;</button>
+                    <button class="arrow-btn left-arrow" id="prevBtn" aria-label="Previous Books"><svg xmlns="http://www.w3.org/2000/svg" class="arrow-img" viewBox="0 0 640 640"><path d="M169.4 297.4C156.9 309.9 156.9 330.2 169.4 342.7L361.4 534.7C373.9 547.2 394.2 547.2 406.7 534.7C419.2 522.2 419.2 501.9 406.7 489.4L237.3 320L406.6 150.6C419.1 138.1 419.1 117.8 406.6 105.3C394.1 92.8 373.8 92.8 361.3 105.3L169.3 297.3z"/></svg></button>
                 </div>
                 
                 <div class="slider-track" id="sliderTrack"></div>
 
                 <div class="button-area">
-                    <button class="arrow-btn right-arrow" id="nextBtn" aria-label="Next Books">&#9658;</button>
+                    <button class="arrow-btn right-arrow" id="nextBtn" aria-label="Next Books"><svg xmlns="http://www.w3.org/2000/svg" class="arrow-img" viewBox="0 0 640 640"><path d="M471.1 297.4C483.6 309.9 483.6 330.2 471.1 342.7L279.1 534.7C266.6 547.2 246.3 547.2 233.8 534.7C221.3 522.2 221.3 501.9 233.8 489.4L403.2 320L233.9 150.6C221.4 138.1 221.4 117.8 233.9 105.3C246.4 92.8 266.7 92.8 279.2 105.3L471.2 297.3z"/></svg></button>
                 </div>
             </div>
         </section>
@@ -106,13 +158,13 @@
 
             <div class="slider-wrapper"> 
                 <div class="button-area">
-                    <button class="arrow-btn left-arrow" id="prevBtn" aria-label="Previous Books">&#9668;</button>
+                    <button class="arrow-btn left-arrow" id="prevBtn" aria-label="Previous Books"><svg xmlns="http://www.w3.org/2000/svg" class="arrow-img" viewBox="0 0 640 640"><path d="M169.4 297.4C156.9 309.9 156.9 330.2 169.4 342.7L361.4 534.7C373.9 547.2 394.2 547.2 406.7 534.7C419.2 522.2 419.2 501.9 406.7 489.4L237.3 320L406.6 150.6C419.1 138.1 419.1 117.8 406.6 105.3C394.1 92.8 373.8 92.8 361.3 105.3L169.3 297.3z"/></svg></button>
                 </div>
                 
                 <div class="slider-track" id="highRatedTrack"></div>
 
                 <div class="button-area">
-                    <button class="arrow-btn right-arrow" id="nextBtn" aria-label="Next Books">&#9658;</button>
+                    <button class="arrow-btn right-arrow" id="nextBtn" aria-label="Next Books"><svg xmlns="http://www.w3.org/2000/svg" class="arrow-img" viewBox="0 0 640 640"><path d="M471.1 297.4C483.6 309.9 483.6 330.2 471.1 342.7L279.1 534.7C266.6 547.2 246.3 547.2 233.8 534.7C221.3 522.2 221.3 501.9 233.8 489.4L403.2 320L233.9 150.6C221.4 138.1 221.4 117.8 233.9 105.3C246.4 92.8 266.7 92.8 279.2 105.3L471.2 297.3z"/></svg></button>
                 </div>
             </div>
         </section>

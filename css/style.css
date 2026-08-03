@@ -11,6 +11,11 @@
     --accent-color: #8C5A3C;
     --accent-color-second: #875F46;
 
+    --dark-color: #1b1208;
+    --darker-color: #000;
+    --not-so-dark-color: #25180a;
+    --light-color: #b4946a;
+    --lighter-color: #D9D2CA;
 }   
 
 /* ========================================
@@ -37,6 +42,11 @@
     src: url('../assets/fonts/Aulieny.otf') format('opentype');
 }
 
+@font-face {
+    font-family: 'Agatho';
+    src: url('../assets/fonts/Agatho.otf') format('opentype');
+}
+
 /* ========================================
 3. BASE STYLES
 ======================================== */
@@ -51,7 +61,7 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: var(--bg-color);
+    background-color: var(--not-so-dark-color);
 }
 
 /* ========================================
@@ -65,8 +75,8 @@ header {
     align-items: center;
     justify-content: space-between;
     padding: 1rem 2rem;
-    background-color: var(--accent-color);
-    font-size: 1.5rem;
+    background-color: var(--dark-color);
+    font-size: 1rem;
     position: relative;
     position: fixed;
     width: 100%;
@@ -75,16 +85,29 @@ header {
 
 .logo {
     display: flex;
-    color: var(--text-color);
-    font-family: Aulieny;
-    text-transform: uppercase;
-    gap: 0.5rem;
+    gap: 0.2rem;
     align-items: center;
+    color: var(--light-color);
+    font-family: Aulieny;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-title {
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+.logo-subtitle {
+    margin-top: -0.5rem;
+    font-size: 0.5rem;
 }
 
 .logo-img {
-    margin-bottom: 0.5rem;
-    width: 30px;
+    width: 45px;
 }
 
 .top-bar {
@@ -416,13 +439,13 @@ header {
 ======================================== */
 
 .home-section {
-    min-height: 100vh;
+    min-height: 600px;
     padding-top: 50vh;
     display: flex;
     align-items: center;
     padding: 80px 4rem 0 4rem;
     border-bottom: 2px dashed var(--accent-color);
-    background: linear-gradient(rgba(75, 46, 43, 0.6), rgba(75, 46, 43, 0.6)), url('../assets/images/background-2.png');
+    background: linear-gradient(to right, rgba(0,0,0, 1.0) 20%, rgba(0,0,0, 0.1) 100%), url('../assets/images/background-2.png');
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -437,37 +460,67 @@ header {
     align-items: center;
 }
 
+.hero-container hr {
+    border: 1px solid var(--light-color);
+    opacity: 0.5;
+}
+
 .hero-text h1 {
-    font-size: 8rem;
-    line-height: 0.82;
-    color: #fff8f0;
+    font-size: 7rem;
+    line-height: 1;
+    color: var(--light-color);
     margin: 0;
-    font-family: Sins;
-    letter-spacing: 2px;
+    font-family: Agatho;
+    font-weight: 100;
+    text-transform: uppercase;
     
 }
 .hero-text p {
-    font-size: 2.2rem;
+    font-size: 1.1rem;
     color: #b88b68;
-    margin: 1.2rem 0 3.5rem;
-    letter-spacing: 2px;
+    margin: 1.2rem 0 2rem 0;
+    letter-spacing: 1px;
+    font-style: italic;
+    font-family: Aulieny;
 }
-.explore-btn {
-    background: var(--accent-color);
-    color: var(--hover-color);
-    margin-top: 1rem;
-    padding: 1rem 4rem 0.5rem 4rem;
-    border-radius: 99px;
-    font-size: 1.3rem;
+
+.button-list {
+    display: flex;
+    gap: 2rem;
+}
+
+.explore-btn, .category-btn{
+    font-family: Aulieny;
+    padding: 0.7rem 3rem 0.3rem 3rem;
+    border-radius: 5px;
+    font-size: 1.1rem;
     text-decoration: none;
     transition: 0.3s ease;
     display: inline-block;
-    font-family: Aulieny;
     border: none;
+    text-transform: uppercase;
 }
+
+.explore-btn {
+    background: var(--light-color);
+    color: var(--dark-color);
+} 
+
 .explore-btn:hover {
-    background: #996b4b;
-    transform: translateY(-4px);
+    transform: translateY(-2px);
+    background: var(--lighter-color)
+}
+
+.category-btn {
+    background: transparent;
+    color: var(--light-color);
+    border: 2px solid var(--light-color);
+}
+
+.category-btn:hover {
+    transform: translateY(-2px);
+    background: var(--light-color);
+    color: var(--dark-color);
 }
 
 .hero-books {
@@ -486,26 +539,99 @@ header {
     transition: all 0.3s ease;
 }
 .book1 {
-    top: 0;
-    left: 30px;
+    top: 30px;
+    left: 0;
     transform: rotate(-6deg);
     z-index: 3;
 }
 .book2 {
     top: 80px;
-    left: 130px;
+    left: 300px;
     transform: rotate(4deg);
     z-index: 2;
 }
 .book3 {
-    top: 140px;
-    left: 60px;
+    top: 100px;
+    left: 150px;
     transform: rotate(-2deg);
     z-index: 1;
 }
 .book:hover {
     transform: rotate(0deg) translateY(-12px);
     z-index: 10;
+}
+
+.paper h2 {
+    font-family: Aulieny;
+    font-size: 1.3rem;
+    color: var(--dark-color);
+    text-transform: uppercase;
+    padding-top: 0.5rem;
+}
+
+.category {
+    display: flex;
+    align-items: center;
+    padding: 3rem;
+}
+
+.category-list {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+    padding-right: 1rem;
+}
+
+.category-list hr {
+    height: 80%;
+    border: 1px solid var(--dark-color);
+    opacity: 0.3;
+}
+
+.category-details {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.category-img {
+    width: 50px;
+}
+
+.category-name {
+    font-family: Aulieny;
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+.paper {
+    position: relative;
+    background-color: var(--light-color);
+    width: 98%;
+    padding: 1rem 3rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.paper:before, .paper:after {
+    content: '';
+    position: absolute;
+    height: 5px;
+    width: 100%;
+    left: 0;
+    -webkit-clip-path: polygon(1% 0%, 4% 100%, 9% 0%, 13% 100%, 19% 1%, 21% 100%, 26% 5%, 30% 100%, 36% 2%, 43% 100%, 50% 1%, 52% 100%, 61% 0%, 69% 94%, 70% 0%, 76% 100%, 81% 0%, 84% 100%, 91% 0%, 97% 100%, 99% 3%);
+}
+
+.paper:before {
+    background-color: var(--dark-color);
+    top: 0;
+}
+
+.paper:after {
+    background-color: var(--light-color);
+    bottom: -5px;
 }
 
 
@@ -516,6 +642,9 @@ header {
 .features-section, .high-rated-section, .book-month-section{
     padding: 1rem 1rem 5rem 1rem;
     text-align: center;
+}
+
+.features-section, .high-rated-section {
     border-bottom: 2px dashed var(--accent-color);
 }
 
@@ -546,7 +675,7 @@ header {
     align-items: center;
     justify-content: space-between;
     position: relative;
-    margin: 0 auto;
+    margin: 0 auto; 
 }
 
 .slider-track {
@@ -588,9 +717,8 @@ header {
 }
 
 .arrow-btn {
-    background-color: #FFFDF8;
-    color: #5A3500;
-    border: none;
+    background-color: var(--dark-color);
+    border: 1px solid var(--light-color);
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -604,24 +732,133 @@ header {
 }
 
 .arrow-btn:hover {
-    background-color: #D4AF37;
+    background-color: var(--light-color);
+    color: var(--dark-color)
+}
+
+.arrow-btn:hover .arrow-img {
+    fill: var(--dark-color);
+}
+
+.arrow-img {
+    width: 20px;
+    fill: var(--light-color);
 }
 
 .book-card {
     display: flex;
-    flex-direction: column;
+    gap: 1rem;
     align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background-color: rgba(27,18,8,0.9);
+    border: 1px solid var(--light-color);
+    padding: 1rem 1rem 0.5rem 1rem;
+    width: 20rem;
+    flex-shrink: 0;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+}
+
+.book-card .book-cover-link {
+    display: block;
+    width: 42%;
+    flex-shrink: 0;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.book-card .book-cover {
+    width: 100%;
+    display: block;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.book-details-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 0.35rem;
+    width: 58%;
+}
+
+.book-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.book-title {
+    color: var(--lighter-color);
+    font-family: Aulieny;
+    font-size: 1.2rem;
+    line-height: 1.1;
+    font-weight: 700;
+}
+
+.book-author {
+    color: var(--light-color);
+    font-family: Aulieny;
+    font-size: 1rem;
+    line-height: 1;
+}
+
+.book-details hr {
+    border: 1px solid var(--light-color);
+    width: 50px;
+    opacity: 0.4;
+    margin: 0.5rem 0;
+}
+
+.book-price {
+    color: var(--lighter-color);
+    font-family: Kait;
+    font-size: 1.5rem;
+}
+
+.book-rating {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    color: var(--hover-color);
+    font-size: 0.9rem;
+    padding-top: 2rem;
+}
+
+.book-card .star {
+    font-size: 1.2rem;
+    line-height: 1;
+    margin-right: -0.4rem;
+}
+
+.book-card .star.full { 
+    color: #cb880e; 
+}
+
+.book-card .star.half { 
+    color: #cb880e; opacity: 0.25; 
+}
+
+.book-card .star.empty { 
+    color: rgba(255,255,255,0.15); 
+}
+
+.book-card .rating-num {
+    color: rgba(255,255,255,0.6);
+    font-family: Aulieny;
+    font-size: 0.8rem;
+    margin-left: 7px;
+    padding-top: 0.3rem;
 }
 
 .book-cover-link {
     display: block;
     width: 12rem;
-    height: 20rem; 
+    height: 100%; 
     margin-bottom: 15px;
     border-radius: 6px;
     overflow: hidden; 
-    border: 1px solid var(--accent-color); 
-    background-color: var(--accent-color);
 }
 
 .book-cover:hover {
@@ -636,6 +873,13 @@ header {
     object-fit: cover; 
     display: block;
     transition: all 0.3s ease;
+}
+
+.book-details {
+    color: var(--light-color);
+    flex-direction: column;
+    gap: 0.4rem;  
+    text-align: left;
 }
 
 .buy-btn {
@@ -747,7 +991,7 @@ header {
 ======================================== */
 
 footer {
-    background-color: var(--accent-color);  
+    background-color: var(--dark-color);  
     padding: 3rem 2rem;
 }
 
