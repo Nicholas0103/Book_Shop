@@ -13,14 +13,31 @@
 
     <header>
         <div class="logo">
-            <img src="../assets/images/logo.png" class="logo-img" alt="logo">
-            <p>Book Shop</p>
+            <img src="../assets/images/logo2.png" class="logo-img" alt="logo">
+            <div class="logo-text">
+                <p class="logo-title">Book Shop</p>
+                <p class="logo-subtitle">Every Book Holds a Clue</p>
+            </div>
         </div>
         <nav>
             <ul class="top-bar">
-                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li><a href="shop.html">Discover</a></li>
-                <li><a href="shop.html">Categories</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" id="categoriesToggle">Categories
+                    <svg class="dropdown-arrow" viewBox="0 0 24 24" width="14" height="14">
+                        <path d="M7 10l5 5 5-5" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    </a>
+                    <ul class="dropdown-menu" id="categoriesMenu">
+                        <li><a href="shop.html?genre=cozy">Cozy Mystery</a></li>
+                        <li><a href="shop.html?genre=dark">Dark Mystery</a></li>
+                        <li><a href="shop.html?genre=supernatural">Supernatural Mystery</a></li>
+                        <li><a href="shop.html?genre=classic">Classic Detective</a></li>
+                        <li><a href="shop.html?genre=youngadult">YA & Kid Mystery</a></li>
+                        <li><a href="shop.html?genre=historical">Historical Mystery</a></li>
+                    </ul>
+                </li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="#contact" class="active">Contact</a></li>
             </ul>
@@ -162,23 +179,23 @@
     <section class="faq-section">
         <div class="faq-inner">
             <h2 class="section-title reveal">FAQ</h2>
-            <p class="section-subtitle reveal">Frequently Asked Questions</p>
+            <p class="section-subtitle reveal">Common Queries</p>
             <div class="faq-list">
-                <div class="faq-item reveal">
-                    <div class="faq-question">Can I reserve vintage mystery books in advance?</div>
-                    <div class="faq-answer">Yes, you can fill in the contact form to reserve books. We will hold stock for up to 7 days.</div>
+                <div class="faq-item">
+                    <p class="faq-question">Can I reserve vintage mystery books in advance?</p>
+                    <p class="faq-answer">Yes, you can fill in the contact form to reserve books. We will hold stock for up to 7 days.</p>
                 </div>
-                <div class="faq-item reveal">
-                    <div class="faq-question">Do you provide international shipping?</div>
-                    <div class="faq-answer">We ship worldwide, including Malaysia, Singapore and all Southeast Asian countries.</div>
+                <div class="faq-item">
+                    <p class="faq-question">Do you provide international shipping?</p>
+                    <p class="faq-answer">We ship worldwide, including Malaysia, Singapore and all Southeast Asian countries.</p>
                 </div>
-                <div class="faq-item reveal">
-                    <div class="faq-question">What is your return & exchange policy?</div>
-                    <div class="faq-answer">New unopened books can be returned within 14 days. Vintage second-hand books are non-refundable.</div>
+                <div class="faq-item">
+                    <p class="faq-question">What is your return & exchange policy?</p>
+                    <p class="faq-answer">New unopened books can be returned within 14 days. Vintage second-hand books are non-refundable.</p>
                 </div>
-                <div class="faq-item reveal">
-                    <div class="faq-question">Can I browse books inside the store all day?</div>
-                    <div class="faq-answer">Our reading area is open during all business hours for free browsing.</div>
+                <div class="faq-item">
+                    <p class="faq-question">Can I browse books inside the store all day?</p>
+                    <p class="faq-answer">Our reading area is open during all business hours for free browsing.</p>
                 </div>
             </div>
         </div>

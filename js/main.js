@@ -166,7 +166,7 @@ function closeModalAndClear() {
 }
 
 /* ========================================
-2. CART DRAWER SETTINGS
+2. REVEAL ANIMATION
 ======================================== */
 
 function revealAnimation() {
@@ -182,7 +182,30 @@ function revealAnimation() {
     });
 }
 
-function navScrollSpy() {
+/* ========================================
+3. DROPDOWN MENU
+======================================== */
+
+document.addEventListener('DOMContentLoaded', () => {
+  const dropdownLi = document.querySelector('.top-bar li.dropdown');
+  const toggleBtn = document.getElementById('categoriesToggle');
+
+  // Open dropdown menu
+  toggleBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    dropdownLi.classList.toggle('open');
+  });
+
+  // Automatically close the menu if the user clicks outside of it
+  document.addEventListener('click', (e) => {
+    if (!dropdownLi.contains(e.target)) {
+      dropdownLi.classList.remove('open');
+    }
+  });
+});
+
+
+/*function navScrollSpy() {
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.top-bar a');
     const headerOffset = 120; 
@@ -202,7 +225,11 @@ function navScrollSpy() {
             link.classList.add('active');
         }
     });
-}
+}*/
+
+/* ========================================
+4. LEFT & RIGHT ARROW
+======================================== */
 
 window.addEventListener('scroll', () => {
     revealAnimation();
@@ -244,7 +271,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 /* ========================================
-3. BOOK DETAILS
+5. BOOK DETAILS
 ======================================== */
 
     const container = document.getElementById("book-details-container");

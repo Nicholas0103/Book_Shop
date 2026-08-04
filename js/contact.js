@@ -81,10 +81,16 @@ document.addEventListener("DOMContentLoaded", function () {
 2. FAQ
 ======================================== */
 
-const faqItems = document.querySelectorAll(".faq-item");
-faqItems.forEach(function (item) {
-  const q = item.querySelector(".faq-question");
-  q.addEventListener("click", function () {
-    item.classList.toggle("active");
+document.querySelectorAll('.faq-question').forEach(question => {
+  question.addEventListener('click', () => {
+    const currentItem = question.parentElement;
+    
+    // Close other answer when opening another question
+    document.querySelectorAll('.faq-item').forEach(item => {
+      if (item !== currentItem) item.classList.remove('active');
+    });
+
+    currentItem.classList.toggle('active');
   });
 });
+
