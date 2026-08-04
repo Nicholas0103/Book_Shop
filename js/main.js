@@ -320,3 +320,55 @@ document.addEventListener("DOMContentLoaded", () => {
         `;
     }
 });
+
+/* ========================================
+6. MOBILE MENU DRAWER
+======================================== */
+
+document.addEventListener("DOMContentLoaded", () => {
+    const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+    const closeMobileMenuBtn = document.getElementById("closeMobileMenuBtn");
+    const mobileMenuDrawer = document.getElementById("mobileMenuDrawer");
+    const mobileMenuOverlay = document.getElementById("mobileMenuOverlay");
+    const mobileMenuLinks = document.querySelectorAll(".mobile-menu-nav a");
+    const mobileCategoriesToggle = document.querySelector(".mobile-categories-toggle");
+
+    // Open mobile menu
+    mobileMenuBtn?.addEventListener("click", () => {
+        mobileMenuDrawer?.classList.add("open");
+        mobileMenuOverlay?.classList.add("active");
+    });
+
+    // Close mobile menu
+    function closeMobileMenu() {
+        mobileMenuDrawer?.classList.remove("open");
+        mobileMenuOverlay?.classList.remove("active");
+    }
+
+    closeMobileMenuBtn?.addEventListener("click", closeMobileMenu);
+    mobileMenuOverlay?.addEventListener("click", closeMobileMenu);
+
+    // Close menu when clicking on a link
+    mobileMenuLinks.forEach(link => {
+        link.addEventListener("click", (e) => {
+            // Don't close if it's the categories toggle
+            if (!link.classList.contains("mobile-categories-toggle")) {
+                closeMobileMenu();
+            }
+        });
+    });
+
+    // Handle mobile categories submenu toggle
+    mobileCategoriesToggle?.addEventListener("click", (e) => {
+        e.preventDefault();
+        const categoriesMenu = document.querySelector(".mobile-categories-menu");
+        categoriesMenu?.classList.toggle("open");
+    });
+
+    // Close categories submenu when clicking on a category link
+    document.querySelectorAll(".mobile-categories-menu a").forEach(link => {
+        link.addEventListener("click", () => {
+            closeMobileMenu();
+        });
+    });
+});
