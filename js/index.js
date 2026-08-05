@@ -6,12 +6,25 @@ document.addEventListener("DOMContentLoaded", () => {
     renderFeaturedBooks();
 });
 
+// Render star rating markup (returns HTML string)
+function renderStars(rating) {
+    const full = Math.floor(rating);
+    const half = rating - full >= 0.5;
+    let stars = '';
+    for (let i = 1; i <= 5; i++) {
+        if (i <= full) stars += '<span class="star full">★</span>';
+        else if (i === full + 1 && half) stars += '<span class="star half">★</span>';
+        else stars += '<span class="star empty">★</span>';
+    }
+    return `${stars} <span class="rating-num">(${rating.toFixed(1)})</span>`;
+}
+
 function renderFeaturedBooks() {
     const track = document.getElementById("sliderTrack");
     if (!track || typeof BooksData === "undefined") return;
 
     //const selectedIds = [3, 7, 14, 15, 13, 8, 2, 10];
-    const selectedIds = [17, 18, 19, 20, 21, 22, 23, 24];
+    const selectedIds = [17, 18, 9, 20, 21, 22, 23, 24];
 
     const customBooks = selectedIds
         .map(id => BooksData.find(book => book.id === id))
@@ -22,7 +35,15 @@ function renderFeaturedBooks() {
             <a href="book.html?book=${book.id}" class="book-cover-link">
                 <img src="${book.cover}" alt="${book.title}" class="book-cover">
             </a>
-                <button class="buy-btn" data-book-id="${book.id}" onclick="addToCart(${book.id})">Add to Cart</button>
+            <div class="book-details-info">
+                <div class="book-details">
+                    <p class="book-title">${book.title}</p>
+                    <p class="book-author">${book.author}</p>
+                    <hr>
+                    <p class="book-price">${book.price}</p>
+                </div>
+                <p class="book-rating">${renderStars(book.rating)}</p>
+            </div>
         </div>
     `).join("");
 
@@ -54,7 +75,15 @@ function renderHighRatedBooks() {
             <a href="book.html?book=${book.id}" class="book-cover-link">
                 <img src="${book.cover}" alt="${book.title}" class="book-cover">
             </a>
-            <button class="buy-btn" data-book-id="${book.id}" onclick="addToCart(${book.id})">Add to Cart</button>
+            <div class="book-details-info">
+                <div class="book-details">
+                    <p class="book-title">${book.title}</p>
+                    <p class="book-author">${book.author}</p>
+                    <hr>
+                    <p class="book-price">${book.price}</p>
+                </div>
+                <p class="book-rating">${renderStars(book.rating)}</p>
+            </div>
         </div>
     `).join("");
 

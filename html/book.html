@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0, viewport-fit=cover">
     <title>Mystery Bookstore</title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
@@ -13,13 +13,31 @@
 
     <header>
         <div class="logo">
-            <img src="../assets/images/logo.png" class="logo-img" alt="logo">
-            <p>Book Shop</p>
+            <img src="../assets/images/logo2.png" class="logo-img" alt="logo">
+            <div class="logo-text">
+                <p class="logo-title">Book Shop</p>
+                <p class="logo-subtitle">Every Book Holds a Clue</p>
+            </div>
         </div>
         <nav>
             <ul class="top-bar">
                 <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="shop.html">Shop</a></li>
+                <li><a href="shop.html">Discover</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" id="categoriesToggle">Categories
+                    <svg class="dropdown-arrow" viewBox="0 0 24 24" width="14" height="14">
+                        <path d="M7 10l5 5 5-5" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    </a>
+                    <ul class="dropdown-menu" id="categoriesMenu">
+                        <li><a href="shop.html?genre=cozy">Cozy Mystery</a></li>
+                        <li><a href="shop.html?genre=dark">Dark Mystery</a></li>
+                        <li><a href="shop.html?genre=supernatural">Supernatural Mystery</a></li>
+                        <li><a href="shop.html?genre=classic">Classic Detective</a></li>
+                        <li><a href="shop.html?genre=youngadult">YA & Kid Mystery</a></li>
+                        <li><a href="shop.html?genre=historical">Historical Mystery</a></li>
+                    </ul>
+                </li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>

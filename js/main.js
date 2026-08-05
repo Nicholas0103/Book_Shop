@@ -166,7 +166,7 @@ function closeModalAndClear() {
 }
 
 /* ========================================
-2. CART DRAWER SETTINGS
+2. REVEAL ANIMATION
 ======================================== */
 
 function revealAnimation() {
@@ -182,7 +182,30 @@ function revealAnimation() {
     });
 }
 
-function navScrollSpy() {
+/* ========================================
+3. DROPDOWN MENU
+======================================== */
+
+document.addEventListener('DOMContentLoaded', () => {
+  const dropdownLi = document.querySelector('.top-bar li.dropdown');
+  const toggleBtn = document.getElementById('categoriesToggle');
+
+  // Open dropdown menu
+  toggleBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    dropdownLi.classList.toggle('open');
+  });
+
+  // Automatically close the menu if the user clicks outside of it
+  document.addEventListener('click', (e) => {
+    if (!dropdownLi.contains(e.target)) {
+      dropdownLi.classList.remove('open');
+    }
+  });
+});
+
+
+/*function navScrollSpy() {
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.top-bar a');
     const headerOffset = 120; 
@@ -202,7 +225,11 @@ function navScrollSpy() {
             link.classList.add('active');
         }
     });
-}
+}*/
+
+/* ========================================
+4. LEFT & RIGHT ARROW
+======================================== */
 
 window.addEventListener('scroll', () => {
     revealAnimation();
@@ -244,7 +271,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 /* ========================================
-3. BOOK DETAILS
+5. BOOK DETAILS
 ======================================== */
 
     const container = document.getElementById("book-details-container");
@@ -292,4 +319,56 @@ document.addEventListener("DOMContentLoaded", () => {
             </div>
         `;
     }
+});
+
+/* ========================================
+6. MOBILE MENU DRAWER
+======================================== */
+
+document.addEventListener("DOMContentLoaded", () => {
+    const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+    const closeMobileMenuBtn = document.getElementById("closeMobileMenuBtn");
+    const mobileMenuDrawer = document.getElementById("mobileMenuDrawer");
+    const mobileMenuOverlay = document.getElementById("mobileMenuOverlay");
+    const mobileMenuLinks = document.querySelectorAll(".mobile-menu-nav a");
+    const mobileCategoriesToggle = document.querySelector(".mobile-categories-toggle");
+
+    // Open mobile menu
+    mobileMenuBtn?.addEventListener("click", () => {
+        mobileMenuDrawer?.classList.add("open");
+        mobileMenuOverlay?.classList.add("active");
+    });
+
+    // Close mobile menu
+    function closeMobileMenu() {
+        mobileMenuDrawer?.classList.remove("open");
+        mobileMenuOverlay?.classList.remove("active");
+    }
+
+    closeMobileMenuBtn?.addEventListener("click", closeMobileMenu);
+    mobileMenuOverlay?.addEventListener("click", closeMobileMenu);
+
+    // Close menu when clicking on a link
+    mobileMenuLinks.forEach(link => {
+        link.addEventListener("click", (e) => {
+            // Don't close if it's the categories toggle
+            if (!link.classList.contains("mobile-categories-toggle")) {
+                closeMobileMenu();
+            }
+        });
+    });
+
+    // Handle mobile categories submenu toggle
+    mobileCategoriesToggle?.addEventListener("click", (e) => {
+        e.preventDefault();
+        const categoriesMenu = document.querySelector(".mobile-categories-menu");
+        categoriesMenu?.classList.toggle("open");
+    });
+
+    // Close categories submenu when clicking on a category link
+    document.querySelectorAll(".mobile-categories-menu a").forEach(link => {
+        link.addEventListener("click", () => {
+            closeMobileMenu();
+        });
+    });
 });

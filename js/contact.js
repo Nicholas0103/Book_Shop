@@ -1,87 +1,96 @@
+
+/* ========================================
+1. CONTACT FORM
+======================================== */
+
 document.addEventListener("DOMContentLoaded", function () {
-  const form = document.getElementById("contactForm");
+  const RegistrationForm = document.getElementById("contactForm");
   const status = document.getElementById("formStatus");
 
-  form.addEventListener("submit", function (event) {
-    event.preventDefault();
-
+  if (RegistrationForm) {
     const name = document.getElementById("name");
     const email = document.getElementById("email");
     const subject = document.getElementById("subject");
     const message = document.getElementById("message");
 
-    let isValid = true;
+    const name_error = document.getElementById("name-error");
+    const email_error = document.getElementById("email-error");
+    const subject_error = document.getElementById("subject-error");
+    const message_error = document.getElementById("message-error");
 
-    clearErrors();
+    RegistrationForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+      let error = false;
 
-    if (name.value.trim() === "") {
-      showError(name, "Name is required.");
-      isValid = false;
-    }
+      name.classList.remove("error-input");
+      email.classList.remove("error-input");
+      subject.classList.remove("error-input");
+      message.classList.remove("error-input");
+      name_error.textContent = "";
+      email_error.textContent = "";
+      subject_error.textContent = "";
+      message_error.textContent = "";
 
-    if (email.value.trim() === "") {
-      showError(email, "Email is required.");
-      isValid = false;
-    } else if (!isValidEmail(email.value.trim())) {
-      showError(email, "Please enter a valid email address.");
-      isValid = false;
-    }
+      const name_value = name.value.trim();
+      const email_value = email.value.trim();
+      const message_value = message.value.trim();
+      const email_rule = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    if (subject.value.trim() === "") {
-      showError(subject, "Subject is required.");
-      isValid = false;
-    }
+      if (name_value === "") {
+        name.classList.add("error-input");
+        name_error.textContent = "Please enter your name.";
+        error = true;
+      }
 
-    if (message.value.trim() === "") {
-      showError(message, "Message is required.");
-      isValid = false;
-    }
+      if (email_value === "") {
+        email.classList.add("error-input");
+        email_error.textContent = "Please enter your email address.";
+        error = true;
+      } else if (!email_rule.test(email_value)) {
+        email.classList.add("error-input");
+        email_error.textContent = "Please enter a valid email address.";
+        error = true;
+      }
 
-    if (isValid) {
+      if (subject.value.trim() === "") {
+        subject.classList.add("error-input");
+        subject_error.textContent = "Please select a subject.";
+        error = true;
+      }
+
+      if (message_value === "") {
+        message.classList.add("error-input");
+        message_error.textContent = "Please enter your description.";
+        error = true;
+      }
+
+      if (error) {
+        status.textContent = "Please complete the form above.";
+        status.className = "form-status error";
+        return;
+      }
+
       status.textContent = "Your message has been sent successfully!";
       status.className = "form-status success";
-      form.reset();
-    } else {
-      status.textContent = "Please fix the errors above.";
-      status.className = "form-status error";
-    }
+      RegistrationForm.reset();
+    });
+  }
+});
+
+/* ========================================
+2. FAQ
+======================================== */
+
+document.querySelectorAll('.faq-question').forEach(question => {
+  question.addEventListener('click', () => {
+    const currentItem = question.parentElement;
+    
+    // Close other answer when opening another question
+    document.querySelectorAll('.faq-item').forEach(item => {
+      if (item !== currentItem) item.classList.remove('active');
+    });
+
+    currentItem.classList.toggle('active');
   });
-
-  function showError(input, message) {
-    const formGroup = input.parentElement;
-    const errorMessage = formGroup.querySelector(".error-message");
-
-    input.classList.add("input-error");
-    errorMessage.textContent = message;
-  }
-
-  function clearErrors() {
-    const inputs = form.querySelectorAll("input, textarea");
-    const errorMessages = form.querySelectorAll(".error-message");
-
-    inputs.forEach(function (input) {
-      input.classList.remove("input-error");
-    });
-
-    errorMessages.forEach(function (error) {
-      error.textContent = "";
-    });
-
-    status.textContent = "";
-    status.className = "form-status";
-  }
-
-  function isValidEmail(email) {
-    const pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return pattern.test(email);
-  }
 });
 
-// FAQ Toggle
-const faqItems = document.querySelectorAll('.faq-item');
-faqItems.forEach(item => {
-    const q = item.querySelector('.faq-question');
-    q.addEventListener('click', () => {
-        item.classList.toggle('active');
-    });
-});
