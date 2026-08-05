@@ -1243,3 +1243,149 @@ footer p:last-child {
     color: #ffb3b3;
     margin-top: 1rem;
 }
+
+/* ========================================
+8. SHOP.HTML
+======================================== */
+
+.shop-section {
+    padding: 5rem 1rem;
+    text-align: center;
+    border-bottom: clamp(0.125rem, 0.3vw, 0.625rem) dashed var(--accent-color);
+}
+
+.book-showcase-grid {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.book-showcase-cover {
+    width: 25%;
+}
+
+.book-showcase-info {
+    width: 50%;
+}
+
+.book-showcase-img {
+    border-radius: 10px;
+    border: 1px solid var(--accent-color);
+    height: 30rem;
+    width: auto;
+}
+
+.book-showcase-title {
+    color: var(--hover-color);
+    font-size: 3rem;
+    font-family: Hexen;
+    letter-spacing: 5px;
+    font-weight: 100;
+}
+
+.book-showcase-author {
+    color: var(--text-color);
+    font-size: 2rem;
+    font-family: Aulieny;
+    margin-top: -2rem;
+    margin-bottom: 2rem;
+}
+
+.book-showcase-description {
+    color: var(--accent-color);
+    font-size: 1.5rem;
+    font-family: Aulieny;
+    text-align: justify;
+    padding: 0 30px;
+}
+
+.genre-selection-section {
+    padding : 2rem 0rem 5rem 0rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    max-width: 70rem;
+    margin: 0 auto;
+}
+
+.genre-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.25rem;
+    width: 100%;
+    padding: 2rem;
+    background-color: var(--accent-color);
+    border-radius: 2rem;
+}
+
+.genre-card {
+    background-color: var(--hover-color);
+    color: var(--accent-color);
+    font-family: Aulieny;
+    font-size: 1.5rem;
+    border-radius: 2rem;
+    padding: 1rem 0rem;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.genre-card:hover {
+    background-color: var(--text-color);
+    color: var(--hover-color);
+    transform: translateY(-2px);
+}
+
+.cozy-genre-section, .bloody-genre-section, .supernatural-genre-section, .detective-genre-section, .kid-genre-section, .historical-genre-section {
+    padding: 3rem 1rem 5rem 1rem;
+    text-align: center;
+    border-bottom: clamp(0.125rem, 0.3vw, 0.625rem) dashed var(--accent-color);
+}
+.cozy-genre-section { border-top: clamp(0.125rem, 0.3vw, 0.625rem) dashed var(--accent-color);  }
+
+.cozy-genre-grid, .bloody-genre-grid, .supernatural-genre-grid, .detective-genre-grid, .kid-genre-grid, .historical-genre-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    margin: 0 auto;
+    gap: 2rem;
+    width: 100%;
+    padding-top: 2rem;
+    max-width: 1400px;
+}
+
+.cozy-book-card, .bloody-book-card, .supernatural-book-card, .detective-book-card, .kid-book-card, .historical-book-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cozy-book-cover-link, .bloody-book-cover-link, .supernatural-book-cover-link, .detective-book-cover-link, .kid-book-cover-link, .historical-book-cover-link {
+    display: block;
+    width: 12rem;
+    height: 20rem; 
+    margin-bottom: 15px;
+    border-radius: 6px;
+    overflow: hidden; 
+    border: 1px solid var(--accent-color); 
+    background-color: var(--accent-color);
+}
+
+.cozy-book-cover:hover, .bloody-book-cover:hover, .supernatural-book-cover:hover, .detective-book-cover:hover, .kid-book-cover:hover, .historical-book-cover:hover {
+    transform: scale(1.03);
+    opacity: 1.0;
+}
+
+.cozy-book-cover, .bloody-book-cover, .supernatural-book-cover, .detective-book-cover, .kid-book-cover, .historical-book-cover {
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
+    object-fit: cover; 
+    display: block;
+    transition: all 0.3s ease;
+}
