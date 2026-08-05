@@ -29,16 +29,6 @@ function renderBookShowcase(bookId) {
 }
 
 /* ========================================
-2. GENRE COUNTER
-======================================== */
-
-function getGenreCount(genreName) {
-    if (typeof BooksData === "undefined") return 0;
-    return BooksData.filter(book => book.subgenre === genreName).length;
-}
-
-
-/* ========================================
 3. COZY CORNER
 ======================================== */
 
@@ -104,4 +94,30 @@ const genreSections = [
 // 3. Single event listener to run them all at once
 document.addEventListener("DOMContentLoaded", () => {
     genreSections.forEach(section => renderGenreSection(section));
+
+    // 2. Read URL parameters (e.g., ?genre=cozy)
+    const urlParams = new URLSearchParams(window.location.search);
+    const selectedGenre = urlParams.get("genre");
+
+    // 3. Scroll to the corresponding section if parameter exists
+    if (selectedGenre) {
+        // Map the parameter to your section IDs
+        const sectionMap = {
+            "cozy": "cozyGenre",
+            "dark": "bloodyGenre",
+            "supernatural": "supernaturalGenre",
+            "classic": "detectiveGenre",
+            "youngadult": "kidGenre",
+            "historical": "historicalGenre"
+            // Add other genre keys here as needed
+        };
+
+        const targetId = sectionMap[selectedGenre];
+        const targetElement = document.getElementById(targetId);
+
+        if (targetElement) {
+            // Smoothly scroll to the target section
+            targetElement.scrollIntoView({ behavior: "smooth" });
+        }
+    }
 });
