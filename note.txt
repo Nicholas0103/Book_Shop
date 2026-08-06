@@ -17,11 +17,244 @@ Font:
 - Aulieny
 
 To do list:
+- Left & right button
 - Layout for mobile users
-- Redesign
-- Colors
 - Design Footer
-- Shop page
-- About page
-- Contact page
 - Complete README
+- Home Page categories mobile layout
+- Book of the Month moble layout
+- contact page mobile layout
+- about page Redesign
+- topbar arrange
+- shop page Redesign
+
+
+
+.book-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.book-cover-link {
+    display: block;
+    width: 12rem;
+    height: 20rem; 
+    margin-bottom: 15px;
+    border-radius: 12px;
+    overflow: hidden; 
+    border: 1px solid var(--accent-color); 
+    background-color: var(--accent-color);
+}
+
+.book-cover:hover {
+    transform: scale(1.03);
+    opacity: 1.0;
+}
+
+.book-cover {
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
+    object-fit: cover; 
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.buy-btn {
+    background-color: #FFFDF8;
+    color: #5A3500;
+    border: none;
+    padding: 0.3rem 3rem 0.1rem 3rem;
+    border-radius: 20px;
+    font-family: Aulieny;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+    margin-top: 1rem;
+}
+
+.buy-btn:hover {
+    background-color: var(--accent-color);
+    color: var(--hover-color);
+    transform: translateY(-2px);
+}
+
+        /*<div class="book-card">
+            <a href="book.html?book=${book.id}" class="book-cover-link">
+                <img src="${book.cover}" alt="${book.title}" class="book-cover">
+            </a>
+            <div class="book-details-info">
+                <div class="book-details">
+                    <p class="book-title">${book.title}</p>
+                    <p class="book-author">${book.author}</p>
+                    <hr>
+                    <p class="book-price">${book.price}</p>
+                </div>
+                <p class="book-rating">${renderStars(book.rating)}</p>
+            </div>
+        </div>*/
+
+        
+
+    .book-card {
+        flex-direction: column;   /* Changes structural row to an up-and-down column */
+        width: 13rem;             /* Slims down the width layout dynamically to match image 2 */
+        height: auto;
+        background-color: transparent; /* Removes background borders if you want clean covers */
+        border: none;
+        box-shadow: none;
+        padding: 0;
+        gap: 1.2rem;
+    }
+
+
+
+    
+    .book-details-info {
+        display: none;
+    }
+    .book-card .buy-btn {
+        display: block;
+    }
+
+    .book-card {
+        width: 12rem;
+    }
+    
+    .book-card .book-cover-link {
+        width: 12rem;
+        height: 20rem;
+    }
+}
+
+
+.book-card {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background-color: rgba(27,18,8,0.9);
+    border: 1px solid var(--light-color);
+    padding: 1rem 1rem 0.5rem 1rem;
+    width: 20rem;
+    flex-shrink: 0;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+}
+
+
+.error-message {
+    color: var(--error-color);
+    font-size: 0.9rem;
+    padding: 0.5rem 0 0 0.2rem;
+    font-family: Aulieny;
+    min-height: 3rem;
+    display: block;
+}
+.form-group input.error-input, textarea.error-input, select.error-input{
+    border-color:var(--error-color);
+    background: var(--not-so-dark-color);
+    box-shadow: 0 0 5px var(--error-color);
+}
+.contact-form .explore-btn {
+    margin-top: 1rem;
+}
+.form-status {
+    font-family: Aulieny;
+    letter-spacing: 1px;
+    font-size: 1rem;
+    display: block; 
+    min-height: 3rem; 
+    margin-top: 1rem;
+}
+.form-status.success {
+    color: var(--lighter-color);
+}
+.form-status.error {
+    color: var(--error-color);
+}
+input::placeholder, textarea::placeholder {
+  color: var(--light-color); 
+  opacity: 0.5; 
+}
+input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, input:-webkit-autofill:active {
+    transition: background-color 50000s ease-in-out 0s, color 50000s ease-in-out 0s;
+}
+input:-webkit-autofill {
+    -webkit-text-fill-color: var(--lighter-color);
+}
+
+/* FAQ SECTION */
+.faq-section {
+    padding: 2rem 2rem 5rem 2rem;
+    border-top: 2px dashed var(--light-color);
+    border-bottom: 2px dashed var(--light-color);
+}
+.faq-inner {
+    max-width: 850px;
+    margin: 0 auto;
+}
+.faq-list {
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.3rem;
+}
+.faq-item {
+    background: rgba(184, 139, 104, 0.12);
+    border: 1px dashed var(--light-color);
+    border-radius: 8px;
+    overflow: hidden;
+}
+.faq-question {
+    padding: 1.4rem 2rem 0 2rem;
+    color: var(--light-color);
+    font-family: Aulieny;
+    font-size: 1.4rem;
+    cursor: pointer;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+}
+.faq-question::after {
+    content: "+";
+    font-size: 2rem;
+    color: var(--light-color);
+    transition: transform 0.3s ease;
+}
+.faq-item.active .faq-question::after {
+    transform: rotate(45deg);
+}
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 2rem;
+    color: var(--lighter-color);
+    font-family: Aulieny;
+    font-size: 1.15rem;
+    line-height: 1.8;
+    transition: all 0.3s ease; 
+}
+.faq-item.active .faq-answer {
+    max-height: 320px;
+    padding: 0 2rem 1.4rem 2rem;
+}
+.error-message {
+    display: block;
+    color: #ffb3b3;
+    font-size: 1rem;
+    margin-top: 0.3rem;
+    font-family: Aulieny;
+}
+.input-error {
+    outline: 2px solid #ff6b6b !important;
+}
+.form-status.success {
+    color: #b8ffb8;
+    margin-top: 1rem;
+}
+.form-status.error {
+    color: #ffb3b3;
+    margin-top: 1rem;
+}

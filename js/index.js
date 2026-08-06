@@ -35,16 +35,20 @@ function renderFeaturedBooks() {
             <a href="book.html?book=${book.id}" class="book-cover-link">
                 <img src="${book.cover}" alt="${book.title}" class="book-cover">
             </a>
+            
             <div class="book-details-info">
-                <div class="book-details">
-                    <p class="book-title">${book.title}</p>
-                    <p class="book-author">${book.author}</p>
-                    <hr>
-                    <p class="book-price">${book.price}</p>
-                </div>
-                <p class="book-rating">${renderStars(book.rating)}</p>
+            <div class="book-details">
+                <p class="book-title">${book.title}</p>
+                <p class="book-author">${book.author}</p>
+                <hr>
+                <p class="book-price">${book.price}</p>
             </div>
+            <p class="book-rating">${renderStars(book.rating)}</p>
+            </div>
+
+            <button class="buy-btn" data-book-id="${book.id}" onclick="addToCart(${book.id})">Add to Cart</button>  
         </div>
+        
     `).join("");
 
     updateCartButtons();
@@ -84,6 +88,7 @@ function renderHighRatedBooks() {
                 </div>
                 <p class="book-rating">${renderStars(book.rating)}</p>
             </div>
+            <button class="buy-btn" data-book-id="${book.id}" onclick="addToCart(${book.id})">Add to Cart</button>  
         </div>
     `).join("");
 

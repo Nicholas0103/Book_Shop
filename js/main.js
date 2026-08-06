@@ -372,3 +372,44 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
+
+
+/* ========================================
+7. FOOTER EMAIL VALIDATION
+======================================== */
+
+const newsletterForm = document.getElementById("newsletterForm");
+const newsletterStatus = document.getElementById("newsletterStatus");
+
+if (newsletterForm) {
+    const newsletterEmail = document.getElementById("newsletterEmail");
+    const emailRule = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    newsletterForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+        
+        const emailValue = newsletterEmail.value.trim();
+        
+        newsletterEmail.classList.remove("error-input");
+        newsletterStatus.textContent = "";
+        newsletterStatus.className = "";
+
+        if (emailValue === "") {
+            newsletterEmail.classList.add("error-input");
+            newsletterStatus.textContent = "Please enter your email.";
+            newsletterStatus.className = "form-status error";
+            return;
+        } 
+        
+        if (!emailRule.test(emailValue)) {
+            newsletterEmail.classList.add("error-input");
+            newsletterStatus.textContent = "Please enter a valid email address.";
+            newsletterStatus.className = "form-status error";
+            return;
+        }
+
+        newsletterStatus.textContent = "Thank you for subscribing!";
+        newsletterStatus.className = "form-status success";
+        newsletterForm.reset();
+    });
+}

@@ -58,7 +58,6 @@
     box-sizing: border-box;
     scroll-behavior: smooth;
     transition: all 0.3s ease;
-    
 }
 body {
     margin: 0;
@@ -732,7 +731,7 @@ header {
 .hero-text h1 {
     font-size: 7rem;
     line-height: 1;
-    color: var(--hover-color);
+    color: var(--light-color);
     margin: 0;
     font-family: Agatho;
     font-weight: 100;
@@ -980,8 +979,8 @@ header {
 }
 
 .button-area {
-    display: flex; 
-    flex-shrink: 0; 
+    display: flex;
+    width: 5%;
     justify-content: center;
     align-items: center;
 }
@@ -1017,33 +1016,33 @@ header {
 
 .book-card {
     display: flex;
-    flex-direction: row;
-    gap: 1rem;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    border-radius: 10px;
-    background-color: rgba(27,18,8,0.9);
-    border: 1px solid var(--light-color);
-    padding: 1rem 1rem 0.5rem 1rem;
-    flex-shrink: 0;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.6);
-    height: 14rem;
-    width: 20rem;
 }
 
 .book-card .book-cover-link {
     display: block;
-    width: 50%;
-    border-radius: 6px;
-    overflow: hidden;
+    width: 12rem;
+    height: 20rem; 
+    margin-bottom: 15px;
+    border-radius: 12px;
+    overflow: hidden; 
+    border: 1px solid var(--accent-color); 
+    background-color: var(--accent-color);
+}
+
+.book-card .book-cover:hover {
+    transform: scale(1.03);
+    opacity: 1.0;
 }
 
 .book-card .book-cover {
     width: 100%;
-    display: block;
     height: 100%;
-    object-fit: cover;
-    border-radius: 6px;
+    opacity: 0.8;
+    object-fit: cover; 
+    display: block;
+    transition: all 0.3s ease;
 }
 
 .book-details-info {
@@ -1125,7 +1124,6 @@ header {
 
 .book-cover-link {
     display: block;
-    width: 12rem;
     height: 100%; 
     margin-bottom: 15px;
     border-radius: 6px;
@@ -1196,43 +1194,37 @@ header {
 
 .book-month-cover-link {
     width: 30%;
-    display: block; 
 }
 
 .book-month-text {
     width: 50%;
-    display: block; 
-    display: flex;
-    flex-direction: column;
 }
 
 .book-month-img {
     border-radius: 10px;
     border: 1px solid var(--accent-color);
-    width: 100%;
-    height: auto; 
+    height: 35rem;
 }
 
 .book-month-title {
     color: var(--hover-color);
-    font-size: 3rem;
-    font-family: Aulieny;
+    font-size: 4rem;
+    font-family: Hexen;
     letter-spacing: 5px;
     font-weight: 100;
-    text-transform: uppercase;
 }
 
 .book-month-author {
     color: var(--text-color);
     font-size: 2rem;
     font-family: Aulieny;
-    margin-top: -1.5rem;
+    margin-top: -2rem;
     margin-bottom: 2rem;
 }
 
 .book-month-details {
     color: var(--accent-color);
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     font-family: Aulieny;
     text-align: justify;
     padding: 0 30px;
@@ -1258,7 +1250,6 @@ header {
     border-radius: 6px;
     text-decoration: none;
     font-size: 2rem;
-    margin-top: -0.5rem;
 }
 
 /* ========================================
@@ -1614,7 +1605,6 @@ footer p:last-child {
     font-family: Aulieny;
     min-height: 3rem;
     display: block;
-    letter-spacing: 1px;
 }
 .form-group input.error-input, textarea.error-input, select.error-input{
     border-color:var(--error-color);
@@ -1634,14 +1624,9 @@ footer p:last-child {
 }
 .form-status.success {
     color: var(--lighter-color);
-    margin-top: 1rem;
 }
 .form-status.error {
     color: var(--error-color);
-    margin-top: 1rem;
-}
-.input-error {
-    outline: 2px solid var(--error-color);
 }
 input::placeholder, textarea::placeholder {
   color: var(--light-color); 
@@ -1708,6 +1693,24 @@ input:-webkit-autofill {
 .faq-item.active .faq-answer {
     max-height: 320px;
     padding: 0 2rem 1.4rem 2rem;
+}
+.error-message {
+    display: block;
+    color: #ffb3b3;
+    font-size: 1rem;
+    margin-top: 0.3rem;
+    font-family: Aulieny;
+}
+.input-error {
+    outline: 2px solid #ff6b6b !important;
+}
+.form-status.success {
+    color: #b8ffb8;
+    margin-top: 1rem;
+}
+.form-status.error {
+    color: #ffb3b3;
+    margin-top: 1rem;
 }
 
 /* ==========================================================================
@@ -1846,29 +1849,6 @@ input:-webkit-autofill {
         right: 0;
         top: 40px;
     }
-    .book-month-title {
-        font-size: 2rem;
-        letter-spacing: 3px;
-        line-height: 1;
-    }
-    .book-month-author {
-        font-size: 1.2rem;
-        margin-top: -0.1rem;
-        margin-bottom: 0.5rem;
-    }
-    .book-month-details {
-        font-size: 1rem;
-    }
-    .book-month-price {
-        font-size: 2rem;
-    }
-    .book-month-action {
-        margin-top: 1rem;
-    }
-    .book-month-action .buy-btn {
-        padding: 0.5rem 2rem 0.1rem 2rem;
-        font-size: 1.5rem;
-    }
 }
 
 @media (max-width: 900px) {
@@ -1913,53 +1893,17 @@ input:-webkit-autofill {
     .book-card .buy-btn {
         display: block;
     }
+
     .book-card {
-        flex-direction: column;
-        flex: 0 0 12rem;
-        width: 20rem;
-        height: auto;
-        box-sizing: border-box;
-        gap: 0;
-        border: none;
+        width: 12rem;
     }
+    
     .book-card .book-cover-link {
-        display: block;
-        border-radius: 8px;
-        overflow: hidden; 
-        border: 1px solid var(--accent-color); 
-        background-color: var(--accent-color);
-        width: 100%;
-        height: auto;
-        aspect-ratio: 2 / 3;      
-    }
-    .book-cover {
-        width: auto;
-        height: 100%;
-        opacity: 0.8;
-        object-fit: contain; 
-        display: block;
-        transition: all 0.3s ease;
-    }
-    .book-card .book-cover {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-    .slider-track {
-        gap: 0; 
+        width: 12rem;
+        height: 20rem;
     }
 }
-
-@media (max-width: 600px) {
-    .book-month-info {
-        flex-direction: column;
     }
-    .book-month-cover-link {
-        width: 50%;
-    }
-  .book-month-text {
-    width: 100%;
-  }
 }
 
 @media (max-width: 500px) {
@@ -2123,182 +2067,4 @@ input:-webkit-autofill {
     object-fit: cover; 
     display: block;
     transition: all 0.3s ease;
-}
-
-
-/*testing*/
-.site-footer {
-    background-color: rgba(20, 13, 8, 0.95);
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 3rem 2rem 1.5rem 2rem;
-    font-family: sans-serif;
-}
-
-.footer-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 2.5rem;
-    padding-bottom: 2.5rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-
-.footer-container .logo-title {
-    color: var(--light-color);
-}
-.footer-container .logo-subtitle {
-    margin-top: -1rem;
-    color: var(--light-color);
-    letter-spacing: 1px;
-}
-.footer-brand {
-    width: 15rem;
-    margin-right: 10rem;
-}
-.brand-desc {
-    font-size: 0.9rem;
-    line-height: 1.5;
-    color: var(--lighter-color);
-    max-width: 300px;
-    margin-top: 1.5rem;
-    text-align: justify;
-    font-family: Aulieny;
-}
-
-.footer-col {
-    flex: 1 1 160px;
-}
-
-.footer-heading {
-    font-size: 1.1rem;
-    color: var(--lighter-color);
-    margin-bottom: 1rem;
-    position: relative;
-    font-family: Aulieny;
-    text-transform: uppercase;
-}
-
-.footer-links {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.footer-links li {
-    margin-bottom: 0.6rem;
-}
-
-.footer-links a {
-    color: var(--light-color);
-    font-family: Aulieny;
-    text-decoration: none;
-    font-size: 0.9rem;
-    opacity: 0.7;
-    letter-spacing: 1px;
-}
-
-.footer-links a:hover {
-    opacity: 1;
-    color: var(--hover-color, #f4e8c1);
-}
-
-/* Newsletter Form */
-.footer-newsletter {
-    flex: 1 1 250px;
-}
-
-.footer-newsletter p {
-    font-size: 0.9rem;
-    opacity: 0.75;
-    margin-bottom: 1rem;
-    color: var(--light-color);
-    letter-spacing: 1px;
-}
-
-.newsletter-form {
-    display: flex;
-    gap: 8px;
-}
-
-.newsletter-form input {
-    padding: 0.6rem 0.8rem;
-    border-radius: 6px;
-    border: 1px solid var(--light-color);
-    background: rgba(0, 0, 0, 0.3);
-    color: var(--lighter-color);
-    font-size: 0.85rem;
-    width: 100%;
-    font-family: Aulieny;
-}
-
-.newsletter-form input:focus {
-    outline: 1px solid var(--lighter-color);
-}
-
-.newsletter-form button {
-    padding: 0.3rem 1rem;
-    border-radius: 6px;
-    border: none;
-    background-color: var(--lighter-color);
-    color: var(--dark-color);
-    font-weight: bold;
-    cursor: pointer;
-    transition: opacity 0.2s ease;
-    font-family: Aulieny;
-    letter-spacing: 1px;
-    border: 1px solid var(--lighter-color);
-}
-
-.newsletter-form button:hover {
-    background-color: var(--light-color);
-    color: var(--lighter-color);
-    font-family: Aulieny;
-}
-
-#newsletterStatus {
-    font-size: 0.7rem;
-}
-
-/* Bottom Bar */
-.footer-bottom {
-    max-width: 1200px;
-    margin: 1.5rem auto 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 0.85rem;
-    opacity: 0.6;
-}
-
-.footer-socials {
-    display: flex;
-    gap: 15px;
-}
-
-.footer-socials a {
-    color: inherit;
-    text-decoration: none;
-    font-weight: bold;
-    transition: opacity 0.2s;
-}
-
-.footer-socials a:hover {
-    opacity: 1;
-}
-
-/* Mobile Responsiveness */
-@media (max-width: 768px) {
-    .footer-container {
-        flex-direction: column;
-        gap: 2rem;
-    }
-
-    .footer-bottom {
-        flex-direction: column;
-        gap: 1rem;
-        text-align: center;
-    }
 }
