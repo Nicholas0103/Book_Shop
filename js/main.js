@@ -330,49 +330,39 @@ document.addEventListener("DOMContentLoaded", () => {
     const closeMobileMenuBtn = document.getElementById("closeMobileMenuBtn");
     const mobileMenuDrawer = document.getElementById("mobileMenuDrawer");
     const mobileMenuOverlay = document.getElementById("mobileMenuOverlay");
-    const mobileMenuLinks = document.querySelectorAll(".mobile-menu-nav a");
     const mobileCategoriesToggle = document.querySelector(".mobile-categories-toggle");
 
-    // Open mobile menu
-    mobileMenuBtn?.addEventListener("click", () => {
+    function openMobileMenu() {
         mobileMenuDrawer?.classList.add("open");
         mobileMenuOverlay?.classList.add("active");
-    });
+    }
 
-    // Close mobile menu
     function closeMobileMenu() {
         mobileMenuDrawer?.classList.remove("open");
         mobileMenuOverlay?.classList.remove("active");
     }
 
+    mobileMenuBtn?.addEventListener("click", openMobileMenu);
     closeMobileMenuBtn?.addEventListener("click", closeMobileMenu);
     mobileMenuOverlay?.addEventListener("click", closeMobileMenu);
 
-    // Close menu when clicking on a link
-    mobileMenuLinks.forEach(link => {
+    // Toggle categories accordion
+    mobileCategoriesToggle?.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation(); // Prevents click from triggering parent link events
+        const categoriesMenu = document.querySelector(".mobile-categories-menu");
+        categoriesMenu?.classList.toggle("open");
+    });
+
+    // Close menu when clicking ANY actual link (excluding the toggle parent)
+    document.querySelectorAll(".mobile-menu-nav a").forEach(link => {
         link.addEventListener("click", (e) => {
-            // Don't close if it's the categories toggle
             if (!link.classList.contains("mobile-categories-toggle")) {
                 closeMobileMenu();
             }
         });
     });
-
-    // Handle mobile categories submenu toggle
-    mobileCategoriesToggle?.addEventListener("click", (e) => {
-        e.preventDefault();
-        const categoriesMenu = document.querySelector(".mobile-categories-menu");
-        categoriesMenu?.classList.toggle("open");
-    });
-
-    // Close categories submenu when clicking on a category link
-    document.querySelectorAll(".mobile-categories-menu a").forEach(link => {
-        link.addEventListener("click", () => {
-            closeMobileMenu();
-        });
-    });
 });
-
 
 /* ========================================
 7. FOOTER EMAIL VALIDATION

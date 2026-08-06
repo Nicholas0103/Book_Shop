@@ -17,14 +17,13 @@ Font:
 - Aulieny
 
 To do list:
-- Left & right button
-- Layout for mobile users
-- Design Footer
+- cart box overflow
 - Complete README
-- Home Page categories mobile layout
-- Book of the Month moble layout
+- about us mobile layout
+- shop page mobile layout
 - contact page mobile layout
 - about page Redesign
-- topbar arrange
 - shop page Redesign
+- footer add link (including bottom right icon)
+- color arrange (not so dark color???)
 
