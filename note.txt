@@ -17,11 +17,9 @@ Font:
 - Aulieny
 
 To do list:
-- Layout for mobile users
-- Redesign
-- Colors
-- Design Footer
-- Shop page
-- About page
-- Contact page
-- Complete README
+1. home page genre design
+2. shop page mobile layout
+3. contact page mobile layout
+4. shop page Redesign
+5. footer add link (including bottom right icon)
+6. Complete README

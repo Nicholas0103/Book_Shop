@@ -183,7 +183,7 @@ function revealAnimation() {
 }
 
 /* ========================================
-3. DROPDOWN MENU
+3. DROPDOWN MENU ANIMATION
 ======================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -203,6 +203,26 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  const dropdownLi = document.querySelector('.mobile-drawer li.dropdown');
+  const toggleBtn = document.getElementById('mobilecategoriesToggle');
+
+  // Open dropdown menu
+  toggleBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    dropdownLi.classList.toggle('open');
+  });
+
+  // Automatically close the menu if the user clicks outside of it
+  document.addEventListener('click', (e) => {
+    if (!dropdownLi.contains(e.target)) {
+      dropdownLi.classList.remove('open');
+    }
+  });
+});
+
+
 
 
 /*function navScrollSpy() {
@@ -330,45 +350,77 @@ document.addEventListener("DOMContentLoaded", () => {
     const closeMobileMenuBtn = document.getElementById("closeMobileMenuBtn");
     const mobileMenuDrawer = document.getElementById("mobileMenuDrawer");
     const mobileMenuOverlay = document.getElementById("mobileMenuOverlay");
-    const mobileMenuLinks = document.querySelectorAll(".mobile-menu-nav a");
     const mobileCategoriesToggle = document.querySelector(".mobile-categories-toggle");
 
-    // Open mobile menu
-    mobileMenuBtn?.addEventListener("click", () => {
+    function openMobileMenu() {
         mobileMenuDrawer?.classList.add("open");
         mobileMenuOverlay?.classList.add("active");
-    });
+    }
 
-    // Close mobile menu
     function closeMobileMenu() {
         mobileMenuDrawer?.classList.remove("open");
         mobileMenuOverlay?.classList.remove("active");
     }
 
+    mobileMenuBtn?.addEventListener("click", openMobileMenu);
     closeMobileMenuBtn?.addEventListener("click", closeMobileMenu);
     mobileMenuOverlay?.addEventListener("click", closeMobileMenu);
 
-    // Close menu when clicking on a link
-    mobileMenuLinks.forEach(link => {
+    // Toggle categories accordion
+    mobileCategoriesToggle?.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation(); // Prevents click from triggering parent link events
+        const categoriesMenu = document.querySelector(".mobile-categories-menu");
+        categoriesMenu?.classList.toggle("open");
+    });
+
+    // Close menu when clicking ANY actual link (excluding the toggle parent)
+    document.querySelectorAll(".mobile-menu-nav a").forEach(link => {
         link.addEventListener("click", (e) => {
-            // Don't close if it's the categories toggle
             if (!link.classList.contains("mobile-categories-toggle")) {
                 closeMobileMenu();
             }
         });
     });
-
-    // Handle mobile categories submenu toggle
-    mobileCategoriesToggle?.addEventListener("click", (e) => {
-        e.preventDefault();
-        const categoriesMenu = document.querySelector(".mobile-categories-menu");
-        categoriesMenu?.classList.toggle("open");
-    });
-
-    // Close categories submenu when clicking on a category link
-    document.querySelectorAll(".mobile-categories-menu a").forEach(link => {
-        link.addEventListener("click", () => {
-            closeMobileMenu();
-        });
-    });
 });
+
+
+/* ========================================
+7. FOOTER EMAIL VALIDATION
+======================================== */
+
+const newsletterForm = document.getElementById("newsletterForm");
+const newsletterStatus = document.getElementById("newsletterStatus");
+
+if (newsletterForm) {
+    const newsletterEmail = document.getElementById("newsletterEmail");
+    const emailRule = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    newsletterForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+        
+        const emailValue = newsletterEmail.value.trim();
+        
+        newsletterEmail.classList.remove("error-input");
+        newsletterStatus.textContent = "";
+        newsletterStatus.className = "";
+
+        if (emailValue === "") {
+            newsletterEmail.classList.add("error-input");
+            newsletterStatus.textContent = "Please enter your email.";
+            newsletterStatus.className = "form-status error";
+            return;
+        } 
+        
+        if (!emailRule.test(emailValue)) {
+            newsletterEmail.classList.add("error-input");
+            newsletterStatus.textContent = "Please enter a valid email address.";
+            newsletterStatus.className = "form-status error";
+            return;
+        }
+
+        newsletterStatus.textContent = "Thank you for subscribing!";
+        newsletterStatus.className = "form-status success";
+        newsletterForm.reset();
+    });
+}

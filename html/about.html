@@ -21,9 +21,9 @@
         </div>
         <nav>
             <ul class="top-bar">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="shop.html">Discover</a></li>
-                <li class="dropdown">
+                <li class="hide-on-mobile"><a href="index.html">Home</a></li>
+                <li class="hide-on-mobile"><a href="shop.html">Discover</a></li>
+                <li class="hide-on-mobile dropdown">
                     <a href="#" class="dropdown-toggle" id="categoriesToggle">Categories
                     <svg class="dropdown-arrow" viewBox="0 0 24 24" width="14" height="14">
                         <path d="M7 10l5 5 5-5" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
@@ -38,15 +38,62 @@
                         <li><a href="shop.html?genre=historical">Historical Mystery</a></li>
                     </ul>
                 </li>
-                <li><a href="#about" class="active">About Us</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li class="hide-on-mobile"><a href="#about" class="active">About Us</a></li>
+                <li class="hide-on-mobile"><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
 
-        <button id="openCartBtn" class="cart-icon-btn" aria-label="Open Cart">
-            <img src="../assets/images/svg/cart.svg" class="cart-img" alt="cart">
-            <span id="headerCartCount" class="cart-badge">0</span>
-        </button>
+        <div class="nav-actions">
+            <button id="openCartBtn" class="cart-icon-btn" aria-label="Open Cart">
+                <img src="../assets/images/svg/cart.svg" class="cart-img" alt="cart">
+                <span id="headerCartCount" class="cart-badge">0</span>
+            </button>
+
+            <button id="mobileMenuBtn" class="mobile-menu-btn" aria-label="Open Menu">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+
+        <div id="mobileMenuDrawer" class="mobile-menu-drawer">
+            <div class="mobile-menu-header">
+                <button id="closeMobileMenuBtn" class="close-mobile-menu-btn" aria-label="Close Menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            <nav class="mobile-menu-nav">
+                <ul class="mobile-drawer">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Discover</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="mobile-categories-toggle" id="mobilecategoriesToggle">
+                            Categories
+                            <svg class="dropdown-arrow" viewBox="0 0 24 24" width="14" height="14">
+                                <path d="M7 10l5 5 5-5" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                        <ul class="mobile-categories-menu" id="categoriesMenu">
+                            <li><a href="shop.html?genre=cozy">Cozy Mystery</a></li>
+                            <li><a href="shop.html?genre=dark">Dark Mystery</a></li>
+                            <li><a href="shop.html?genre=supernatural">Supernatural Mystery</a></li>
+                            <li><a href="shop.html?genre=classic">Classic Detective</a></li>
+                            <li><a href="shop.html?genre=youngadult">YA & Kid Mystery</a></li>
+                            <li><a href="shop.html?genre=historical">Historical Mystery</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div id="mobileMenuOverlay" class="mobile-menu-overlay"></div>
 
         <div id="cartDrawer" class="cart-drawer">
             <div class="cart-header">
@@ -86,37 +133,160 @@
 
     <main>
         <section id="about" class="about-section">
-            <h2 class="section-title reveal">About Us</h2>
-            <p class="section-subtitle reveal">Mystery & Detective Book Shop</p>
+            <div class="about-hero">
+                <h1 class="section-title reveal">About Our Bookstore</h1>
+                <p class="section-subtitle reveal">A peek into our history and passion for crime literature</p>
+            </div>  
             
-            <!--Background Example-->
-            <img src="../assets/images/background.png" alt="about-us" class="about-img">
-
-            <div class="about-container">
-                <div class="about-block reveal">
+            <div class="about-story-grid reveal">
+                <div class="story-image-wrap">
+                    <img src="../assets/images/background-3.jpg" alt="Baker Street Vibe" class="about-img">
+                </div>
+                <div class="story-content">
                     <h3>Our Story</h3>
-                    <p>Inspired by classic detective novels and Sherlock Holmes' iconic 221B Baker Street, our bookstore was built for every fan of mystery, crime and thriller stories. We noticed local readers lacked a dedicated space for detective fiction—most general bookstores only put mystery books in a tiny corner with little attention. That’s why we created this one-stop shop fully focused on whodunits, psychological suspense and classic detective works.</p>
+                    <p>Inspired by classic detective novels and Sherlock Holmes' iconic study, our bookstore was built for every fan of mystery and psychological suspense. We noticed local readers lacked a dedicated space for detective fiction, so we built a one-stop sanctuary fully focused on whodunits and locked-room puzzles.</p>
                 </div>
-                <div class="about-block reveal">
-                    <h3>What We Offer</h3>
-                    <p>We curate a wide collection of exclusive mystery genres: classic British detective stories, modern crime thrillers, psychological mysteries, hard-boiled detective novels and locked-room puzzle books. Every book is hand-picked to bring readers immersive, twist-filled reading experiences. We do not sell other categories like romance or fantasy to keep our store’s unique niche positioning.</p>
+            </div>
+        </section>
+
+        <section class="about-features-section reveal">
+            <h2 class="section-title">Our Unsolved Signature</h2>
+            <p class="section-subtitle">The Details of our mysterious bookstore</p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <svg class="feature-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                        <path d="M480 272C480 317.9 465.1 360.3 440 394.7L566.6 521.4C579.1 533.9 579.1 554.2 566.6 566.7C554.1 579.2 533.8 579.2 521.3 566.7L394.7 440C360.3 465.1 317.9 480 272 480C157.1 480 64 386.9 64 272C64 157.1 157.1 64 272 64C386.9 64 480 157.1 480 272zM272 416C351.5 416 416 351.5 416 272C416 192.5 351.5 128 272 128C192.5 128 128 192.5 128 272C128 351.5 192.5 416 272 416z"/>
+                    </svg>
+                    <h3>Curated Selection</h3>
+                    <p>Exclusive focus on classic detective, dark mystery, and hard-boiled fiction. Zero generic romance or fantasy clutter.</p>
                 </div>
-                <div class="about-block reveal">
-                    <h3>Our Shop Concept</h3>
-                    <p>Our space adopts dark vintage tones, dim warm lighting and detective-themed decorations such as magnifying glass logos, old case files and vintage book shelves. We want readers to feel like stepping into a detective’s study, where every page turn uncovers a new secret. The website follows the same dark, warm aesthetic to mirror our physical store vibe.</p>
+
+                <div class="feature-card">
+                    <svg class="feature-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                        <path d="M20.8 71.4C22.8 66.9 27.1 64 32 64C36.9 64 41.2 66.9 43.2 71.4L61.3 113.7C63.1 117.8 64 122.3 64 126.8L64 128C64 145.7 49.7 160 32 160C14.3 160 0 145.7 0 128L0 126.8C0 122.3 .9 117.9 2.7 113.7L20.8 71.4zM116.8 71.4C118.8 66.9 123.1 64 128 64C132.9 64 137.2 66.9 139.2 71.4L157.4 113.8C159.2 117.9 160.1 122.4 160.1 126.9L160.1 128.1C160.1 145.8 145.8 160.1 128.1 160.1C110.4 160.1 96 145.7 96 128L96 126.8C96 122.3 96.9 117.9 98.7 113.7L116.8 71.4zM194.6 113.8L212.8 71.4C214.8 66.9 219.1 64 224 64C228.9 64 233.2 66.9 235.2 71.4L253.4 113.8C255.2 117.9 256.1 122.4 256.1 126.9L256.1 128.1C256.1 145.8 241.8 160.1 224.1 160.1C206.4 160.1 192.1 145.8 192.1 128.1L192.1 126.9C192.1 122.4 193 118 194.8 113.8zM308.8 71.4C310.8 66.9 315.1 64 320 64C324.9 64 329.2 66.9 331.2 71.4L349.4 113.8C351.2 117.9 352.1 122.4 352.1 126.9L352.1 128.1C352.1 145.8 337.8 160.1 320.1 160.1C302.4 160.1 288.1 145.8 288.1 128.1L288.1 126.9C288.1 122.4 289 118 290.8 113.8L308.8 71.4zM386.6 113.8L404.8 71.4C406.8 66.9 411.1 64 416 64C420.9 64 425.2 66.9 427.2 71.4L445.4 113.8C447.2 117.9 448.1 122.4 448.1 126.9L448.1 128.1C448.1 145.8 433.8 160.1 416.1 160.1C398.4 160.1 384.1 145.8 384.1 128.1L384.1 126.9C384.1 122.4 385 118 386.8 113.8zM500.8 71.4C502.8 66.9 507.1 64 512 64C516.9 64 521.2 66.9 523.2 71.4L541.4 113.8C543.2 117.9 544.1 122.4 544.1 126.9L544.1 128.1C544.1 145.8 529.8 160.1 512.1 160.1C494.4 160.1 480.1 145.8 480.1 128.1L480.1 126.9C480.1 122.4 481 118 482.8 113.8L500.8 71.4zM578.6 113.8L596.8 71.4C598.8 66.9 603.1 64 608 64C612.9 64 617.2 66.9 619.2 71.4L637.4 113.8C639.2 117.9 640.1 122.4 640.1 126.9L640.1 128.1C640.1 145.8 625.8 160.1 608.1 160.1C590.4 160.1 576.1 145.8 576.1 128.1L576.1 126.9C576.1 122.4 577 118 578.8 113.8zM32 192C49.7 192 64 206.3 64 224L64 352C64 369.7 78.3 384 96 384L288 384L288 224C288 206.3 302.3 192 320 192C337.7 192 352 206.3 352 224L352 384L544 384C561.7 384 576 369.7 576 352L576 224C576 206.3 590.3 192 608 192C625.7 192 640 206.3 640 224L640 352C640 405 597 448 544 448L352 448L352 512L480 512C497.7 512 512 526.3 512 544C512 561.7 497.7 576 480 576L160 576C142.3 576 128 561.7 128 544C128 526.3 142.3 512 160 512L288 512L288 448L96 448C43 448 0 405 0 352L0 224C0 206.3 14.3 192 32 192zM128 192C145.7 192 160 206.3 160 224L160 352L96 352L96 224C96 206.3 110.3 192 128 192zM224 192C241.7 192 256 206.3 256 224L256 352L192 352L192 224C192 206.3 206.3 192 224 192zM416 192C433.7 192 448 206.3 448 224L448 352L384 352L384 224C384 206.3 398.3 192 416 192zM512 192C529.7 192 544 206.3 544 224L544 352L480 352L480 224C480 206.3 494.3 192 512 192z"/>
+                    </svg>
+                    <h3>Vintage Concept</h3>
+                    <p>Dark tones, dim lighting, and detective case files make visiting us feel like stepping into a private investigator's study.</p>
                 </div>
-                <div class="about-block reveal">
+
+                <div class="feature-card">
+                    <svg class="feature-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                        <path d="M288 64C323.3 64 352 85.5 352 112C352 122.4 347.6 132 340 139.9C333.4 146.8 328 155.2 328 164.8C328 179.8 340.2 192 355.2 192L400 192C426.5 192 448 213.5 448 240L448 284.8C448 299.8 460.2 312 475.2 312C484.7 312 493.2 306.6 500.1 300C508 292.5 517.6 288 528 288C554.5 288 576 316.7 576 352C576 387.3 554.5 416 528 416C517.6 416 507.9 411.6 500.1 404C493.2 397.4 484.8 392 475.2 392C460.2 392 448 404.2 448 419.2L448 528C448 554.5 426.5 576 400 576L343.2 576C330.4 576 320 565.6 320 552.8C320 543.6 325.8 535.5 333.2 530C344.8 521.3 352 509.3 352 496C352 469.5 323.3 448 288 448C252.7 448 224 469.5 224 496C224 509.3 231.2 521.3 242.8 530C250.2 535.5 256 543.5 256 552.8C256 565.6 245.6 576 232.8 576L112 576C85.5 576 64 554.5 64 528L64 407.2C64 394.4 74.4 384 87.2 384C96.4 384 104.5 389.8 110 397.2C118.7 408.8 130.7 416 144 416C170.5 416 192 387.3 192 352C192 316.7 170.5 288 144 288C130.7 288 118.7 295.2 110 306.8C104.5 314.2 96.5 320 87.2 320C74.4 320 64 309.6 64 296.8L64 240C64 213.5 85.5 192 112 192L220.8 192C235.8 192 248 179.8 248 164.8C248 155.3 242.6 146.8 236 139.9C228.5 132 224 122.4 224 112C224 85.5 252.7 64 288 64z"/>
+                    </svg>
                     <h3>Our Mission</h3>
-                    <p>We aim to gather all mystery lovers together, recommend hidden gem detective novels that are rarely seen in mainstream bookstores, and create a cozy reading environment for puzzle fans. Through this website, we hope more people can discover the charm of detective and mystery literature anytime, anywhere.</p>
+                    <p>Uncovering hidden gems that mainstream stores ignore, connecting puzzle fans and mystery lovers everywhere.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-team-section reveal">
+            <h2 class="section-title">Meet The Investigators</h2>
+            <p class="section-subtitle">dedicated Team Behind mystery bookstore</p>
+            
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-avatar">
+                        <img src="../assets/images/profile/character-1.png" alt="Team Member 1" class="avatar-img">
+                        <img src="../assets/images/frame.png" alt="frame" class="frame-img">
+                    </div>
+                    <h4>Nicholas</h4>
+                    <span class="team-role">Architect & Developer</span>
+                </div>
+                <div class="team-card">
+                    <div class="team-avatar">
+                        <img src="../assets/images/profile/character-2.png" alt="Team Member 2" class="avatar-img">
+                        <img src="../assets/images/frame.png" alt="frame" class="frame-img">
+                    </div>
+                    <h4>Xin Wey</h4>
+                    <span class="team-role">Head Book Curator</span>
+                </div>
+                <div class="team-card">
+                    <div class="team-avatar">
+                        <img src="../assets/images/profile/character-3.png" alt="Team Member 3" class="avatar-img">
+                        <img src="../assets/images/frame.png" alt="frame" class="frame-img">
+                    </div>
+                    <h4>Jinjie</h4>
+                    <span class="team-role">Archive & Content Specialist</span>
+                </div>
+                <div class="team-card">
+                    <div class="team-avatar">
+                        <img src="../assets/images/profile/character-4.png" alt="Team Member 4" class="avatar-img">
+                        <img src="../assets/images/frame.png" alt="frame" class="frame-img">
+                    </div>
+                    <h4>Zhen Hou</h4>
+                    <span class="team-role">Research & <br>Case Specialist</span>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer>
-        <div class="footer-info">
-            <p>📍 221B Baker Street, London</p>
-            <p>&copy; 2026 Book Shop. All Rights Reserved.</p>
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <div class="logo">
+                    <img src="../assets/images/logo2.png" class="logo-img" alt="logo">
+                    <div class="logo-text">
+                        <p class="logo-title">Book Shop</p>
+                        <p class="logo-subtitle">Every Book Holds a Clue</p>
+                    </div>
+                </div>
+                <p class="brand-desc">
+                    Your premier destination for classic mysteries, dark thrillers, and captivating literature.
+                </p>
+            </div>
+
+            <div class="footer-col">
+                <h4 class="footer-heading">Explore</h4>
+                <ul class="footer-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="shop.html">Featured Books</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4 class="footer-heading">Support</h4>
+                <ul class="footer-links">
+                    <li><a href="contact.html">FAQ & Help</a></li>
+                    <li><a href="#">Shipping & Returns</a></li>
+                    <li><a href="#">Order Tracking</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col footer-newsletter"> 
+                <h4 class="footer-heading">Stay Connected</h4> 
+                <p>Subscribe for rare book updates & weekly deals.</p> 
+
+                <form id="newsletterForm" novalidate class="newsletter-form"> 
+                    <input type="email" id="newsletterEmail" placeholder="Enter your email" required> 
+                    <button type="submit">Join</button> 
+                </form>
+                <div id="newsletterStatus"></div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Book Shop. All rights reserved.</p>
+            <div class="footer-socials">
+                <a href="#" aria-label="Facebook">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                        <path d="M160 96C124.7 96 96 124.7 96 160L96 480C96 515.3 124.7 544 160 544L258.2 544L258.2 398.2L205.4 398.2L205.4 320L258.2 320L258.2 286.3C258.2 199.2 297.6 158.8 383.2 158.8C399.4 158.8 427.4 162 438.9 165.2L438.9 236C432.9 235.4 422.4 235 409.3 235C367.3 235 351.1 250.9 351.1 292.2L351.1 320L434.7 320L420.3 398.2L351 398.2L351 544L480 544C515.3 544 544 515.3 544 480L544 160C544 124.7 515.3 96 480 96L160 96z"/>
+                    </svg>
+                </a>
+                <a href="#" aria-label="Instagram">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                        <path d="M290.4 275.7C274 286 264.5 304.5 265.5 323.8C266.6 343.2 278.2 360.4 295.6 368.9C313.1 377.3 333.8 375.5 349.6 364.3C366 354 375.5 335.5 374.5 316.2C373.4 296.8 361.8 279.6 344.4 271.1C326.9 262.7 306.2 264.5 290.4 275.7zM432.7 207.3C427.5 202.1 421.2 198 414.3 195.3C396.2 188.2 356.7 188.5 331.2 188.8C327.1 188.8 323.3 188.9 320 188.9C316.7 188.9 312.8 188.9 308.6 188.8C283.1 188.5 243.8 188.1 225.7 195.3C218.8 198 212.6 202.1 207.3 207.3C202 212.5 198 218.8 195.3 225.7C188.2 243.8 188.6 283.4 188.8 308.9C188.8 313 188.9 316.8 188.9 320C188.9 323.2 188.9 327 188.8 331.1C188.6 356.6 188.2 396.2 195.3 414.3C198 421.2 202.1 427.4 207.3 432.7C212.5 438 218.8 442 225.7 444.7C243.8 451.8 283.3 451.5 308.8 451.2C312.9 451.2 316.7 451.1 320 451.1C323.3 451.1 327.2 451.1 331.4 451.2C356.9 451.5 396.2 451.9 414.3 444.7C421.2 442 427.4 437.9 432.7 432.7C438 427.5 442 421.2 444.7 414.3C451.9 396.3 451.5 356.9 451.2 331.3C451.2 327.1 451.1 323.2 451.1 319.9C451.1 316.6 451.1 312.8 451.2 308.5C451.5 283 451.9 243.6 444.7 225.5C442 218.6 437.9 212.4 432.7 207.1L432.7 207.3zM365.6 251.8C383.7 263.9 396.2 282.7 400.5 304C404.8 325.3 400.3 347.5 388.2 365.6C382.2 374.6 374.5 382.2 365.6 388.2C356.7 394.2 346.6 398.3 336 400.4C314.7 404.6 292.5 400.2 274.4 388.1C256.3 376 243.8 357.2 239.5 335.9C235.2 314.6 239.7 292.4 251.7 274.3C263.7 256.2 282.6 243.7 303.9 239.4C325.2 235.1 347.4 239.6 365.5 251.6L365.6 251.6zM394.8 250.5C391.7 248.4 389.2 245.4 387.7 241.9C386.2 238.4 385.9 234.6 386.6 230.8C387.3 227 389.2 223.7 391.8 221C394.4 218.3 397.9 216.5 401.6 215.8C405.3 215.1 409.2 215.4 412.7 216.9C416.2 218.4 419.2 220.8 421.3 223.9C423.4 227 424.5 230.7 424.5 234.5C424.5 237 424 239.5 423.1 241.8C422.2 244.1 420.7 246.2 419 248C417.3 249.8 415.1 251.2 412.8 252.2C410.5 253.2 408 253.7 405.5 253.7C401.7 253.7 398 252.6 394.9 250.5L394.8 250.5zM544 160C544 124.7 515.3 96 480 96L160 96C124.7 96 96 124.7 96 160L96 480C96 515.3 124.7 544 160 544L480 544C515.3 544 544 515.3 544 480L544 160zM453 453C434.3 471.7 411.6 477.6 386 478.9C359.6 480.4 280.4 480.4 254 478.9C228.4 477.6 205.7 471.7 187 453C168.3 434.3 162.4 411.6 161.2 386C159.7 359.6 159.7 280.4 161.2 254C162.5 228.4 168.3 205.7 187 187C205.7 168.3 228.5 162.4 254 161.2C280.4 159.7 359.6 159.7 386 161.2C411.6 162.5 434.3 168.3 453 187C471.7 205.7 477.6 228.4 478.8 254C480.3 280.3 480.3 359.4 478.8 385.9C477.5 411.5 471.7 434.2 453 452.9L453 453z"/>
+                    </svg>
+                </a>
+                <a href="#" aria-label="Youtube">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                        <path d="M378 320.2L282.8 266.1L282.8 374.3L378 320.2zM480 96L160 96C124.7 96 96 124.7 96 160L96 480C96 515.3 124.7 544 160 544L480 544C515.3 544 544 515.3 544 480L544 160C544 124.7 515.3 96 480 96zM494.4 232.1C502 260.7 502 320.3 502 320.3C502 320.3 502 379.9 494.4 408.4C490.2 424.2 477.9 436.1 462.2 440.3C433.9 448 320 448 320 448C320 448 206.1 448 177.8 440.4C162.1 436.2 149.8 424.3 145.6 408.5C138 379.9 138 320.3 138 320.3C138 320.3 138 260.6 145.6 232.1C149.8 216.3 162.1 203.9 177.8 199.7C206.1 192 320 192 320 192C320 192 433.9 192 462.2 199.7C477.9 203.9 490.2 216.3 494.4 232.1z"/>
+                    </svg>
+                </a>
+            </div>
         </div>
     </footer>
 

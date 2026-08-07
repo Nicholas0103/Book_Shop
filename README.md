@@ -8,7 +8,7 @@
 
 ## 📌 Project Overview
 
-Book Store Name: ?
+Book Store Name: Mystery Book shop
 
 Subgenre:
 - Cozy Mystery (Relaxing detective story)
