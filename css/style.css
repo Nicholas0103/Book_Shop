@@ -1992,23 +1992,23 @@ input:-webkit-autofill {
     justify-content: center;
     gap: 1.5rem;
     flex-wrap: wrap;
-    max-width: 70rem;
+    max-width: 55rem;
     margin: 0 auto;
 }
 
 .genre-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1.25rem;
     width: 100%;
     padding: 2rem;
-    background-color: var(--accent-color);
+    background-color: var(--darker-color);
     border-radius: 2rem;
 }
 
 .genre-card {
-    background-color: var(--hover-color);
-    color: var(--accent-color);
+    background-color: var(--accent-color-second);
+    color: var(--darker-color);
     font-family: Aulieny;
     font-size: 1.5rem;
     border-radius: 2rem;
@@ -2070,4 +2070,10 @@ input:-webkit-autofill {
     object-fit: cover; 
     display: block;
     transition: all 0.3s ease;
+}
+
+@media (max-width: 1300px) {
+    .genre-grid {
+        width: 90%;
+    }
 }
