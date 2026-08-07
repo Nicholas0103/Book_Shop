@@ -183,7 +183,7 @@ function revealAnimation() {
 }
 
 /* ========================================
-3. DROPDOWN MENU
+3. DROPDOWN MENU ANIMATION
 ======================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -203,6 +203,26 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  const dropdownLi = document.querySelector('.mobile-drawer li.dropdown');
+  const toggleBtn = document.getElementById('mobilecategoriesToggle');
+
+  // Open dropdown menu
+  toggleBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    dropdownLi.classList.toggle('open');
+  });
+
+  // Automatically close the menu if the user clicks outside of it
+  document.addEventListener('click', (e) => {
+    if (!dropdownLi.contains(e.target)) {
+      dropdownLi.classList.remove('open');
+    }
+  });
+});
+
+
 
 
 /*function navScrollSpy() {
@@ -363,6 +383,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
+
 
 /* ========================================
 7. FOOTER EMAIL VALIDATION

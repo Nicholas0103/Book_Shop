@@ -21,7 +21,7 @@
         </div>
         <nav>
             <ul class="top-bar">
-                <li class="hide-on-mobile"><a href="#home" class="active">Home</a></li>
+                <li class="hide-on-mobile"><a href="index.html">Home</a></li>
                 <li class="hide-on-mobile"><a href="shop.html">Discover</a></li>
                 <li class="hide-on-mobile dropdown">
                     <a href="#" class="dropdown-toggle" id="categoriesToggle">Categories
@@ -39,7 +39,7 @@
                     </ul>
                 </li>
                 <li class="hide-on-mobile"><a href="about.html">About Us</a></li>
-                <li class="hide-on-mobile"><a href="contact.html">Contact</a></li>
+                <li class="hide-on-mobile"><a href="#contact" class="active">Contact</a></li>
             </ul>
         </nav>
 
@@ -68,17 +68,17 @@
                 </button>
             </div>
             <nav class="mobile-menu-nav">
-                <ul>
-                    <li><a href="#home">Home</a></li>
+                <ul class="mobile-drawer">
+                    <li><a href="index.html">Home</a></li>
                     <li><a href="shop.html">Discover</a></li>
-                    <li>
-                        <a href="#" class="mobile-categories-toggle">
+                    <li class="dropdown">
+                        <a href="#" class="mobile-categories-toggle" id="mobilecategoriesToggle">
                             Categories
                             <svg class="dropdown-arrow" viewBox="0 0 24 24" width="14" height="14">
                                 <path d="M7 10l5 5 5-5" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                         </a>
-                        <ul class="mobile-categories-menu">
+                        <ul class="mobile-categories-menu" id="categoriesMenu">
                             <li><a href="shop.html?genre=cozy">Cozy Mystery</a></li>
                             <li><a href="shop.html?genre=dark">Dark Mystery</a></li>
                             <li><a href="shop.html?genre=supernatural">Supernatural Mystery</a></li>
@@ -88,7 +88,7 @@
                         </ul>
                     </li>
                     <li><a href="about.html">About Us</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
         </div>
@@ -133,7 +133,7 @@
 
     <main>
         <!-- Contact Hero Banner -->
-        <section class="contact-hero">
+        <section id="contact" class="contact-hero">
             <div class="contact-hero-content">
                 <h2 class="contact-title reveal">Contact Us</h2>
                 <p class="contact-subtitle reveal">Get In Touch With Our Team Today</p>

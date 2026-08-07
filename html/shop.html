@@ -21,8 +21,8 @@
         </div>
         <nav>
             <ul class="top-bar">
-                <li class="hide-on-mobile"><a href="#home" class="active">Home</a></li>
-                <li class="hide-on-mobile"><a href="shop.html">Discover</a></li>
+                <li class="hide-on-mobile"><a href="index.html">Home</a></li>
+                <li class="hide-on-mobile"><a href="#shop" class="active">Discover</a></li>
                 <li class="hide-on-mobile dropdown">
                     <a href="#" class="dropdown-toggle" id="categoriesToggle">Categories
                     <svg class="dropdown-arrow" viewBox="0 0 24 24" width="14" height="14">
@@ -30,12 +30,12 @@
                     </svg>
                     </a>
                     <ul class="dropdown-menu" id="categoriesMenu">
-                        <li><a href="shop.html?genre=cozy">Cozy Mystery</a></li>
-                        <li><a href="shop.html?genre=dark">Dark Mystery</a></li>
-                        <li><a href="shop.html?genre=supernatural">Supernatural Mystery</a></li>
-                        <li><a href="shop.html?genre=classic">Classic Detective</a></li>
-                        <li><a href="shop.html?genre=youngadult">YA & Kid Mystery</a></li>
-                        <li><a href="shop.html?genre=historical">Historical Mystery</a></li>
+                        <li><a href="#cozyGenre">Cozy Mystery</a></li>
+                        <li><a href="#bloodyGenre">Dark Mystery</a></li>
+                        <li><a href="#supernaturalGenre">Supernatural Mystery</a></li>
+                        <li><a href="#detectiveGenre">Classic Detective</a></li>
+                        <li><a href="#kidGenre">YA & Kid Mystery</a></li>
+                        <li><a href="#historicalGenre">Historical Mystery</a></li>
                     </ul>
                 </li>
                 <li class="hide-on-mobile"><a href="about.html">About Us</a></li>
@@ -68,23 +68,23 @@
                 </button>
             </div>
             <nav class="mobile-menu-nav">
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="shop.html">Discover</a></li>
-                    <li>
-                        <a href="#" class="mobile-categories-toggle">
+                <ul class="mobile-drawer">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#shop">Discover</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="mobile-categories-toggle" id="mobilecategoriesToggle">
                             Categories
                             <svg class="dropdown-arrow" viewBox="0 0 24 24" width="14" height="14">
                                 <path d="M7 10l5 5 5-5" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                         </a>
-                        <ul class="mobile-categories-menu">
-                            <li><a href="shop.html?genre=cozy">Cozy Mystery</a></li>
-                            <li><a href="shop.html?genre=dark">Dark Mystery</a></li>
-                            <li><a href="shop.html?genre=supernatural">Supernatural Mystery</a></li>
-                            <li><a href="shop.html?genre=classic">Classic Detective</a></li>
-                            <li><a href="shop.html?genre=youngadult">YA & Kid Mystery</a></li>
-                            <li><a href="shop.html?genre=historical">Historical Mystery</a></li>
+                        <ul class="mobile-categories-menu" id="categoriesMenu">
+                            <li><a href="#cozyGenre">Cozy Mystery</a></li>
+                            <li><a href="#bloodyGenre">Dark Mystery</a></li>
+                            <li><a href="#supernaturalGenre">Supernatural Mystery</a></li>
+                            <li><a href="#detectiveGenre">Classic Detective</a></li>
+                            <li><a href="#kidGenre">YA & Kid Mystery</a></li>
+                            <li><a href="#historicalGenre">Historical Mystery</a></li>
                         </ul>
                     </li>
                     <li><a href="about.html">About Us</a></li>

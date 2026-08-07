@@ -17,13 +17,9 @@ Font:
 - Aulieny
 
 To do list:
-- cart box overflow
-- Complete README
-- about us mobile layout
-- shop page mobile layout
-- contact page mobile layout
-- about page Redesign
-- shop page Redesign
-- footer add link (including bottom right icon)
-- color arrange (not so dark color???)
-
+1. home page genre design
+2. shop page mobile layout
+3. contact page mobile layout
+4. shop page Redesign
+5. footer add link (including bottom right icon)
+6. Complete README
