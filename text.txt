@@ -57,7 +57,7 @@
     padding: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
-    transition: all 0.3s ease;
+    transition: all 0.3s ease;  
 }
 body {
     margin: 0;
@@ -1304,7 +1304,6 @@ footer p:last-child {
 
 .about-hero .section-title {
     font-size: 4.5rem;
-    font-weight: 100;
 }
 
 .about-hero .section-subtitle {
@@ -1684,13 +1683,12 @@ footer p:last-child {
 
 }
 .contact-title {
-    font-size: 5.6rem;
+    font-size: 6rem;
     font-family: Sins;
     color: var(--cream-100);
     margin: 0;
     line-height: 1;
     text-transform: uppercase;
-    font-weight: 100;
 }
 .contact-subtitle {
     font-size: 1.6rem;
@@ -1937,11 +1935,11 @@ input:-webkit-autofill {
 }
 .shop-section .section-title {
     font-size: 4.5rem;
-    font-weight: 100;
 }
 .shop-section .section-subtitle {
     font-size: 1.1rem;
 }
+
 
 
 .book-showcase-grid {
@@ -1951,20 +1949,14 @@ input:-webkit-autofill {
     justify-content: center;
     align-items: center;
     gap: 2rem;
-    padding-top: 3rem;
-}
-
-.book-showcase-info {
-    flex: 1;   
-    max-width: 500px; 
-    text-align: center;
 }
 
 .book-showcase-cover {
-    flex: 1; 
-    max-width: 300px; 
-    display: flex;
-    justify-content: center;
+    width: 25%;
+}
+
+.book-showcase-info {
+    width: 50%;
 }
 
 .book-showcase-img {
@@ -1977,75 +1969,58 @@ input:-webkit-autofill {
 .book-showcase-title {
     color: var(--cream-100);
     font-size: 3rem;
-    font-family: Aulieny;
-    letter-spacing: 2px;
+    font-family: Hexen;
+    letter-spacing: 5px;
     font-weight: 100;
-    text-transform: uppercase;
-    line-height: 1;
 }
 
 .book-showcase-author {
     color: var(--brown-500);
-    font-size: 1.1rem;
+    font-size: 2rem;
     font-family: Aulieny;
+    margin-top: -2rem;
     margin-bottom: 2rem;
-}
-
-.book-showcase-author span {
-    font-size: 1.8rem;
 }
 
 .book-showcase-description {
     color: var(--brown-500);
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     font-family: Aulieny;
     text-align: justify;
     padding: 0 30px;
-    opacity: 0.7;
 }
 
-.genre-selection-section {
-    padding : 2rem 0rem 5rem 0rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 1.5rem;
-    max-width: 75rem; 
-    width: 90%;
+
+
+.book-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     margin: 0 auto;
+    gap: 2rem;
+    width: 100%;
+    padding-top: 4rem;
+    max-width: 1400px;
 }
 
 .genre-grid {
     display: grid;
-    grid-template-columns: repeat(6, 1fr); 
-    gap: 0.75rem; 
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.25rem;
     width: 100%;
-    padding: 0.75rem; 
+    padding: 1rem;
     background-color: var(--brown-500);
     border-radius: 15px;
-    margin-top: 2rem;
 }
 
 .genre-card {
     background-color: var(--cream-100);
     color: var(--brown-500);
-    font-family: Aulieny, serif;
-    font-size: 1.1rem;
+    font-family: Aulieny;
+    font-size: 1.5rem;
     border-radius: 10px;
-    padding: 1.2rem 0.5rem; /* Symmetric top/bottom padding */
+    padding: 1rem 0rem;
     text-align: center;
     text-decoration: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    white-space: nowrap;
-}
-
-.genre-card .genre-name {
-    margin: 0;
-    padding: 0;
-    line-height: 1; 
 }
 
 .genre-card:hover {
@@ -2054,61 +2029,52 @@ input:-webkit-autofill {
     transform: translateY(-2px);
 }
 
-#detectiveGenre { 
-    border-top: 2px dashed var(--brown-500);  
-}
 .genre-section {
     padding: 3rem 1rem 5rem 1rem;
     text-align: center;
     border-bottom: 2px dashed var(--brown-500);
-    scroll-margin-top: 40px;
 }
 
-.genre-section .section-title {
-    margin-top: 1.5rem;
-    font-size: 2.5rem;
+#detectiveGenre { 
+    border-top: 2px dashed var(--brown-500);  
 }
 
-.book-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 220px));
-    justify-content: center; 
-    gap: 2rem;
-    width: 100%;
-    margin: 0 auto;
-    padding-top: 2rem;
-    max-width: 1400px;
-}
 
+.shop-card .book-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 .shop-card {
     background: var(--neutral-600);
     border: 1px solid var(--brown-500);
     border-radius: 10px;
-    padding: 1rem;
+    padding: 1.5rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     text-align: left;
-    width: 100%;
 }
-
-.cover-wrapper {
-    display: block;
-    width: 100%;
-    aspect-ratio: 2 / 3; 
-    border-radius: 6px;
-    overflow: hidden;
-    margin-bottom: 1rem;
-    background-color: var(--brown-500);
-    border: 1px solid var(--brown-500)
-}
-
 
 .shop-card:hover {
     transform: translateY(-4px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
 }
+
+.cover-wrapper {
+    display: block;
+    width: 100%;
+    max-width: 250px;
+    aspect-ratio: 2 / 3; 
+    border-radius: 6px;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    margin: 1 auto 1.5rem auto;
+    background-color: var(--brown-500);
+    border: 1px solid var(--brown-500)
+}
+
 .cover-img {
     width: 100%;
     height: 100%;
@@ -2128,23 +2094,15 @@ input:-webkit-autofill {
 .shop-card .book-title {
     color: var(--cream-100);
     font-family: Aulieny, serif;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     font-weight: 100;
-    line-height: 1.3;
-    
-    /* Lock height to 2 lines (1.1rem * 1.3 * 2 = ~2.86rem) */
-    min-height: 2.86rem; 
-    
+    line-height: 1.25;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
-    
-    /* Fix weird baseline alignment issues */
-    margin-bottom: 0.25rem; 
 }
-
 
 .shop-card .book-author {
     color: var(--brown-500);
@@ -2162,23 +2120,21 @@ input:-webkit-autofill {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top: 0.2rem;
-    padding-top: 0.2rem;
+    margin-top: 2rem;
+    padding-top: 0.75rem;
     border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .shop-card .book-price {
     font-family: Aulieny, serif;
-    font-size: 0.8rem;
+    font-size: 1.1rem;
     font-weight: 700;
     color: var(--cream-100);
     letter-spacing: 2px;
 }
 
-.book-card-footer .buy-btn {
-    font-size: 0.8rem;
-    padding: 0.4rem 1rem 0.1rem 1rem;
-    margin-top: 0.2rem;
+.book-card-footer .buy-btn{
+
 }
 
 
@@ -2518,32 +2474,6 @@ input:-webkit-autofill {
         font-size: 1.2rem;
         margin-top: 0.2rem;
     }
-    .book-showcase-grid {
-        gap: 1rem;
-        max-width: 90%;
-        margin: 0 auto;
-    }
-    .book-showcase-cover {
-        max-width: 200px; 
-    }
-    .book-showcase-img {
-        height: 20rem;
-    }
-    .book-showcase-title {
-        font-size: 2rem;
-    }
-    .book-showcase-author {
-        font-size: 0.8rem;
-    }
-    .book-showcase-author span {
-        font-size: 1.3rem;
-    }
-    .book-showcase-description {
-        font-size: 1rem;
-    }
-    .genre-selection-section {
-        padding: 0 0 3rem 0;
-    }
 }
 
 @media (max-width: 900px) {
@@ -2561,9 +2491,6 @@ input:-webkit-autofill {
     }
     .logo-img {
         width: 30px;
-    }
-    .genre-grid {
-        grid-template-columns: repeat(3, 1fr);
     }
 }
 
@@ -2662,9 +2589,6 @@ input:-webkit-autofill {
         gap: 1rem;
         text-align: center;
     }
-    .genre-selection-section {
-        max-width: 80vw;
-    }
 }
 
 @media (max-width: 600px) {
@@ -2683,20 +2607,6 @@ input:-webkit-autofill {
 
     .about-hero .section-subtitle {
         font-size: 0.7rem;
-    }
-    .book-showcase-grid {
-        flex-direction: column;
-    }
-    .book-showcase-cover {
-        order: 1;
-        width: 100%;
-    }
-    .book-showcase-info {
-        order: 2;
-        width: 100%;
-    }
-    .genre-grid {
-        grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -2789,9 +2699,7 @@ input:-webkit-autofill {
         padding: 0.5rem 2rem 0.2rem 2rem;
         font-size: 1.2rem;
     }
-    .shop-section {
-        padding: 2rem 1rem;
-    }
+
 }
 
 @media (max-width: 400px) {
@@ -2828,18 +2736,5 @@ input:-webkit-autofill {
     }
     .back-link {
         font-size: 1rem;
-    }
-    .book-showcase-title {
-        font-size: 1.5rem;
-    }
-    .genre-grid {
-        grid-template-columns: repeat(1, 1fr);
-    }
-    .shop-section .section-title {
-        font-size: 3.3rem;
-        font-weight: 100;
-    }
-    .shop-section .section-subtitle {
-        font-size: 0.8rem;
     }
 }

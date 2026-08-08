@@ -1,7 +1,7 @@
 
 const subgenre = {
     cozy: "Cozy Mystery",                  // 
-    dark: "Bloody Mystery",                // 
+    dark: "Dark Mystery",                // 
     supernatural: "Supernatural Mystery",  //
     classic: "Classic Detective",          //
     kids: "YA & Kid Mystery",              //
