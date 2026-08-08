@@ -6,19 +6,26 @@ document.addEventListener("DOMContentLoaded", () => {
     renderFeaturedBooks();
 });
 
-// Render star rating markup (returns HTML string)
 function renderStars(rating) {
     const full = Math.floor(rating);
     const half = rating - full >= 0.5;
     let stars = '';
+    
     for (let i = 1; i <= 5; i++) {
-        if (i <= full) stars += '<span class="star full">★</span>';
-        else if (i === full + 1 && half) stars += '<span class="star half">★</span>';
-        else stars += '<span class="star empty">★</span>';
+        if (i <= full) {
+            stars += '<span class="star full">★</span>';
+        } else if (i === full + 1 && half) {
+            // Half star created by stacking full star (50% width) over empty star
+            stars += `<span class="star half-container">
+                        <span class="star empty">★</span>
+                        <span class="star half-filled">★</span>
+                      </span>`;
+        } else {
+            stars += '<span class="star empty">★</span>';
+        }
     }
     return `${stars} <span class="rating-num">(${rating.toFixed(1)})</span>`;
 }
-
 function renderFeaturedBooks() {
     const track = document.getElementById("sliderTrack");
     if (!track || typeof BooksData === "undefined") return;

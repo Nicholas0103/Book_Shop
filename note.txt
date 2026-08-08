@@ -16,10 +16,296 @@ Font:
 - Kait
 - Aulieny
 
+suggestion:
+- add recommendations in book.html
+
+
 To do list:
-1. home page genre design
+1. shop page Redesign
 2. shop page mobile layout
-3. contact page mobile layout
-4. shop page Redesign
-5. footer add link (including bottom right icon)
-6. Complete README
+3. footer add link (including bottom right icon)
+4. Complete README
+5. home page genre design
+
+smaller words
+and yeah you will know
+
+
+
+.shop-card {
+    background: var(--neutral-600, #1e1915);
+    border: 1px solid var(--brown-500, #3d2f24);
+    border-radius: 10px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: left;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.shop-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+}
+
+/* Cover Image Container */
+.cover-wrapper {
+    display: block;
+    width: 100%;
+    aspect-ratio: 2 / 3; /* Maintains standard book proportions without hardcoded px/rem heights */
+    border-radius: 6px;
+    overflow: hidden;
+    margin-bottom: 0.75rem;
+    background-color: var(--brown-500);
+}
+
+.cover-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.cover-wrapper:hover .cover-img {
+    transform: scale(1.04);
+}
+
+/* Typography & Info */
+.book-title-link {
+    text-decoration: none;
+}
+
+.book-title {
+    color: var(--cream-100);
+    font-family: Aulieny, serif;
+    font-size: 1.15rem;
+    line-height: 1.25;
+    
+    /* Truncate long titles neatly */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.book-author {
+    color: var(--cream-200);
+    font-size: 0.85rem;
+    opacity: 0.8;
+    margin: 0.25rem 0 0.5rem;
+}
+
+/* Card Bottom Section (Price + CTA Button) */
+.card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 0.75rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.book-price {
+    font-family: Aulieny, serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--cream-100);
+}
+
+.buy-btn {
+    background-color: var(--cream-100);
+    color: #1a110b;
+    border: none;
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.buy-btn:hover {
+    background-color: #ffffff;
+}
+
+
+
+function renderGenreSection(config) {
+    const { containerId, genreName, cardClass = "book-card" } = config;
+    const container = document.getElementById(containerId);
+    
+    if (!container || typeof BooksData === "undefined") return;
+
+    // Filter books for this genre once
+    const books = BooksData.filter(book => book.subgenre === genreName);
+
+    container.innerHTML = books.map(book => `
+        <div class="${cardClass}-card">
+            <a href="book.html?book=${book.id}" class="${cardClass}-cover-link">
+                <img src="${book.cover}" alt="${book.title}" class="${cardClass}-cover">
+            </a>
+            <button class="buy-btn" data-book-id="${book.id}" onclick="addToCart(${book.id})">Add to Cart</button>
+        </div>
+    `).join("");
+
+    updateCartButtons();
+}
+
+// 2. Configuration array for all your sections
+const genreSections = [
+    { containerId: "cozyGenreGrid", genreName: "Cozy Mystery", cardClass: "cozy-book" },
+    { containerId: "bloodyGenreGrid", genreName: "Bloody Mystery", cardClass: "bloody-book" },
+    { containerId: "supernaturalGenreGrid", genreName: "Supernatural Mystery", cardClass: "supernatural-book" },
+    { containerId: "detectiveGenreGrid", genreName: "Classic Detective", cardClass: "detective-book" },
+    { containerId: "kidGenreGrid", genreName: "YA & Kid Mystery", cardClass: "kid-book" },
+    { containerId: "historicalGenreGrid", genreName: "Historical Mystery", cardClass: "historical-book" }
+];
+
+// 3. Single event listener to run them all at once
+document.addEventListener("DOMContentLoaded", () => {
+    genreSections.forEach(section => renderGenreSection(section));
+
+    // 2. Read URL parameters (e.g., ?genre=cozy)
+    const urlParams = new URLSearchParams(window.location.search);
+    const selectedGenre = urlParams.get("genre");
+
+    // 3. Scroll to the corresponding section if parameter exists
+    if (selectedGenre) {
+        // Map the parameter to your section IDs
+        const sectionMap = {
+            "cozy": "cozyGenre",
+            "dark": "bloodyGenre",
+            "supernatural": "supernaturalGenre",
+            "classic": "detectiveGenre",
+            "youngadult": "kidGenre",
+            "historical": "historicalGenre"
+            // Add other genre keys here as needed
+        };
+
+        const targetId = sectionMap[selectedGenre];
+        const targetElement = document.getElementById(targetId);
+
+        if (targetElement) {
+            // Smoothly scroll to the target section
+            targetElement.scrollIntoView({ behavior: "smooth" });
+        }
+    }
+});
+
+
+
+.cozy-genre-section, .bloody-genre-section, .supernatural-genre-section, .detective-genre-section, .kid-genre-section, .historical-genre-section {
+    padding: 3rem 1rem 5rem 1rem;
+    text-align: center;
+    border-bottom: 2px dashed var(--brown-500);
+}
+.cozy-genre-section { 
+    border-top: 2px dashed var(--brown-500);  
+}
+
+.cozy-genre-grid, .bloody-genre-grid, .supernatural-genre-grid, .detective-genre-grid, .kid-genre-grid, .historical-genre-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    margin: 0 auto;
+    gap: 2rem;
+    width: 100%;
+    padding-top: 2rem;
+    max-width: 1400px;
+}
+
+.cozy-book-card, .bloody-book-card, .supernatural-book-card, .detective-book-card, .kid-book-card, .historical-book-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cozy-book-cover-link, .bloody-book-cover-link, .supernatural-book-cover-link, .detective-book-cover-link, .kid-book-cover-link, .historical-book-cover-link {
+    display: block;
+    width: 12rem;
+    height: 20rem; 
+    margin-bottom: 15px;
+    border-radius: 6px;
+    overflow: hidden; 
+    border: 1px solid var(--brown-500); 
+    background-color: var(--brown-500);
+}
+
+.cozy-book-cover:hover, .bloody-book-cover:hover, .supernatural-book-cover:hover, .detective-book-cover:hover, .kid-book-cover:hover, .historical-book-cover:hover {
+    transform: scale(1.03);
+    opacity: 1.0;
+}
+
+.cozy-book-cover, .bloody-book-cover, .supernatural-book-cover, .detective-book-cover, .kid-book-cover, .historical-book-cover {
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
+    object-fit: cover; 
+    display: block;
+}
+
+
+
+
+function renderGenreSection(config) {
+    const { containerId, genreName } = config;
+    const container = document.getElementById(containerId);
+    
+    if (!container || typeof BooksData === "undefined") return;
+
+    const books = BooksData.filter(book => book.subgenre === genreName);
+
+    container.innerHTML = books.map(book => `
+        <div class="shop-card">
+            <a href="book.html?book=${book.id}" class="cover-wrapper">
+                <img src="${book.cover}" alt="${book.title}" class="cover-img">
+            </a>
+            <div class="card-details">
+                <a href="book.html?book=${book.id}" class="book-title-link">
+                    <h3 class="book-title">${book.title}</h3>
+                </a>
+                <p class="book-author">${book.author}</p>
+                <div class="stars-container">${renderStars(book.rating)}</div>
+                <div class="card-footer">
+                    <span class="book-price">${book.price}</span>
+                    <button class="buy-btn" data-book-id="${book.id}" onclick="addToCart(${book.id})">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    `).join("");
+
+    if (typeof updateCartButtons === "function") updateCartButtons();
+}
+
+const genreSections = [
+    { containerId: "cozyGenreGrid", genreName: "Cozy Mystery" },
+    { containerId: "bloodyGenreGrid", genreName: "Bloody Mystery" },
+    { containerId: "supernaturalGenreGrid", genreName: "Supernatural Mystery" },
+    { containerId: "detectiveGenreGrid", genreName: "Classic Detective" },
+    { containerId: "kidGenreGrid", genreName: "YA & Kid Mystery" },
+    { containerId: "historicalGenreGrid", genreName: "Historical Mystery" }
+];
+
+document.addEventListener("DOMContentLoaded", () => {
+    genreSections.forEach(section => renderGenreSection(section));
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const selectedGenre = urlParams.get("genre");
+
+    if (selectedGenre) {
+        const sectionMap = {
+            "cozy": "cozyGenre",
+            "dark": "bloodyGenre",
+            "supernatural": "supernaturalGenre",
+            "classic": "detectiveGenre",
+            "youngadult": "kidGenre",
+            "historical": "historicalGenre"
+        };
+
+        const targetElement = document.getElementById(sectionMap[selectedGenre]);
+        if (targetElement) {
+            targetElement.scrollIntoView({ behavior: "smooth" });
+        }
+    }
+});

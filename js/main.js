@@ -288,19 +288,41 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         }
     });
-
+});
 
 /* ========================================
 5. BOOK DETAILS
 ======================================== */
 
+function renderStars(rating) {
+    const full = Math.floor(rating);
+    const half = rating - full >= 0.5;
+    let stars = '';
+    
+    for (let i = 1; i <= 5; i++) {
+        if (i <= full) {
+            stars += '<span class="star full">★</span>';
+        } else if (i === full + 1 && half) {
+            // Half star created by stacking full star (50% width) over empty star
+            stars += `<span class="star half-container">
+                        <span class="star empty">★</span>
+                        <span class="star half-filled">★</span>
+                      </span>`;
+        } else {
+            stars += '<span class="star empty">★</span>';
+        }
+    }
+    return `${stars} <span class="rating-num">(${rating.toFixed(1)})</span>`;
+}
+
+document.addEventListener("DOMContentLoaded", () => {
     const container = document.getElementById("book-details-container");
 
-    // 1. Get the book ID from the URL (e.g., "?book=6")
+    // 1. Get the book ID from the URL
     const urlParams = new URLSearchParams(window.location.search);
     const bookId = urlParams.get("book");
 
-    // 2. Find the book in your BooksData array (using loose equality for string vs number comparison)
+    // 2. Find the book in your BooksData array 
     const selectedBook = BooksData.find(book => book.id == bookId); 
 
     // 3. Render the details or show an error if not found
@@ -312,12 +334,20 @@ document.addEventListener("DOMContentLoaded", () => {
             <div class="detail-info">
                 <div>
                     <h1 class="detail-title">${selectedBook.title}</h1>
-                    <p class="detail-author">By ${selectedBook.author}</p>
+                    <p class="detail-author">By <span>${selectedBook.author}</span></p>
                     
                     <div class="detail-metadata">
-                        <span class="badge">⭐ ${selectedBook.rating} / 5.0</span>
-                        <span class="badge">📁 ${selectedBook.subgenre}</span>
-                        <span class="badge">📅 Published: ${selectedBook.published_year}</span>
+                        <div class="rating-badge">
+                            ${renderStars(selectedBook.rating)}
+                        </div>
+                        <span class="badge category-badge">
+                            <svg class="badge-icon" viewBox="0 0 24 24" width="14" height="14"><path fill="currentColor" d="M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z"/></svg>
+                            ${selectedBook.subgenre}
+                        </span>
+                        <span class="badge year-badge">
+                            <svg class="badge-icon" viewBox="0 0 24 24" width="14" height="14"><path fill="currentColor" d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10z"/></svg>
+                            ${selectedBook.published_year}
+                        </span>
                     </div>
 
                     <p class="details-description">${selectedBook.description}</p>
