@@ -1990,13 +1990,13 @@ input:-webkit-autofill {
     justify-content: center;
     gap: 1.5rem;
     flex-wrap: wrap;
-    max-width: 70rem;
+    max-width: 55rem;
     margin: 0 auto;
 }
 
 .genre-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1.25rem;
     width: 100%;
     padding: 1rem;
@@ -2069,7 +2069,6 @@ input:-webkit-autofill {
     object-fit: cover; 
     display: block;
 }
-
 
 /*testing*/
 .site-footer {
